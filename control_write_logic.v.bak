@@ -1,0 +1,48 @@
+module control_write_logic (
+			clk,
+			control_fixed,
+			control_go,
+			control_write_base,
+			control_write_length,
+			user_buffer_input,
+			user_write_buffer,
+			control_done,
+			user_buffer_full,
+			transfer);
+			
+input clk;
+
+output reg control_fixed;
+output reg control_go;
+output reg [31:0] control_write_base;
+output reg [31:0] control_write_length;
+output reg [31:0] user_buffer_input;
+output reg user_write_buffer;
+
+input wire control_done;
+input wire user_buffer_full;
+input wire transfer;
+
+reg [0:24] count;
+reg [31:0] temp;
+
+initial begin
+count=25’d1;
+user_write_buffer=1’b0;
+temp=32’d30554432; //about 2/3 into 1 second
+control_fixed= 1’b0;
+control_write_base = 32’h04004000; //base address
+control_write_length = 32’d12; //12 bytes to send
+end
+
+
+
+
+
+
+
+
+
+
+
+endmodule
