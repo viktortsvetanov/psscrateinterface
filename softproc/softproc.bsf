@@ -68,8 +68,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 232)
 		(input)
-		(text "master_template_0_user_buffer_input_data[31..0]" (rect 0 0 201 12)(font "Arial" (font_size 8)))
-		(text "master_template_0_user_buffer_input_data[31..0]" (rect 4 221 286 232)(font "Arial" (font_size 8)))
+		(text "master_template_0_user_buffer_input_data[7..0]" (rect 0 0 198 12)(font "Arial" (font_size 8)))
+		(text "master_template_0_user_buffer_input_data[7..0]" (rect 4 221 280 232)(font "Arial" (font_size 8)))
 		(line (pt 0 232)(pt 256 232)(line_width 3))
 	)
 	(port

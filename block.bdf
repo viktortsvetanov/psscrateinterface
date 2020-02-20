@@ -21,7 +21,7 @@ refer to the applicable agreement for further details.
 (header "graphic" (version "1.4"))
 (pin
 	(input)
-	(rect 160 152 328 168)
+	(rect -624 0 -456 16)
 	(text "INPUT" (rect 125 0 161 13)(font "Arial" (font_size 6)))
 	(text "clk" (rect 5 0 23 15)(font "Arial" ))
 	(pt 168 8)
@@ -746,8 +746,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 232)
 		(input)
-		(text "master_template_0_user_buffer_input_data[31..0]" (rect 0 0 336 16)(font "Arial" (font_size 8)))
-		(text "master_template_0_user_buffer_input_data[31..0]" (rect 4 221 340 237)(font "Arial" (font_size 8)))
+		(text "master_template_0_user_buffer_input_data[7..0]" (rect 0 0 328 16)(font "Arial" (font_size 8)))
+		(text "master_template_0_user_buffer_input_data[7..0]" (rect 4 221 332 237)(font "Arial" (font_size 8)))
 		(line (pt 0 232)(pt 256 232)(line_width 3))
 	)
 	(port
@@ -964,10 +964,6 @@ refer to the applicable agreement for further details.
 	(pt -280 488)
 )
 (connector
-	(pt 328 160)
-	(pt 352 160)
-)
-(connector
 	(pt 144 152)
 	(pt -16 152)
 )
@@ -1144,4 +1140,29 @@ refer to the applicable agreement for further details.
 	(pt 280 544)
 	(pt 352 544)
 )
+(connector
+	(pt 224 160)
+	(pt 224 8)
+)
+(connector
+	(pt 352 160)
+	(pt 224 160)
+)
+(connector
+	(pt -280 152)
+	(pt -328 152)
+)
+(connector
+	(pt -328 8)
+	(pt -328 152)
+)
+(connector
+	(pt -456 8)
+	(pt -328 8)
+)
+(connector
+	(pt -328 8)
+	(pt 224 8)
+)
 (junction (pt 272 248))
+(junction (pt -328 8))

@@ -28,7 +28,7 @@ module softproc (
 	input		master_template_0_control_go;
 	output		master_template_0_control_done;
 	input		master_template_0_user_write_buffer;
-	input	[31:0]	master_template_0_user_buffer_input_data;
+	input	[7:0]	master_template_0_user_buffer_input_data;
 	output		master_template_0_user_buffer_full;
 	input		pio_0_external_connection_export;
 	output		sdram_clock_clk;

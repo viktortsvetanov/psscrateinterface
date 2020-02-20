@@ -187,7 +187,7 @@
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
   <parameter name="BURST_CAPABLE" value="0" />
   <parameter name="BURST_COUNT_WIDTH" value="2" />
-  <parameter name="DATA_WIDTH" value="32" />
+  <parameter name="DATA_WIDTH" value="8" />
   <parameter name="FIFO_DEPTH" value="32" />
   <parameter name="FIFO_DEPTH_LOG2" value="5" />
   <parameter name="MASTER_DIRECTION" value="1" />
@@ -467,6 +467,15 @@
   <parameter name="gui_refclk" value="50.0" />
   <parameter name="other_boards" value="None" />
  </module>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="master_template_0.avalon_master"
+   end="onchip_memory2_0.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x10004000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
  <connection
    kind="avalon"
    version="18.1"

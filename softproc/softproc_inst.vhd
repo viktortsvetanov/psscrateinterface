@@ -7,7 +7,7 @@
 			master_template_0_control_go             : in    std_logic                     := 'X';             -- go
 			master_template_0_control_done           : out   std_logic;                                        -- done
 			master_template_0_user_write_buffer      : in    std_logic                     := 'X';             -- write_buffer
-			master_template_0_user_buffer_input_data : in    std_logic_vector(31 downto 0) := (others => 'X'); -- buffer_input_data
+			master_template_0_user_buffer_input_data : in    std_logic_vector(7 downto 0)  := (others => 'X'); -- buffer_input_data
 			master_template_0_user_buffer_full       : out   std_logic;                                        -- buffer_full
 			pio_0_external_connection_export         : in    std_logic                     := 'X';             -- export
 			sdram_clock_clk                          : out   std_logic;                                        -- clk

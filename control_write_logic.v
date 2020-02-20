@@ -32,9 +32,9 @@ input clk;
 
 output reg control_fixed;
 output reg control_go;
-output reg [31:0] control_write_base;
-output reg [31:0] control_write_length;
-output reg [31:0] user_buffer_input;
+output reg [31:0] control_write_base;//
+output reg [31:0] control_write_length;//
+output reg [7:0] user_buffer_input;// try 8 bit? (was 32)
 output reg user_write_buffer;
 
 input wire control_done;
@@ -45,8 +45,8 @@ input d0,d1,d2,d3,d4,d5,d6,d7; // inputs for data
 
 reg [0:24] count;
 reg [31:0] temp;
-reg [4:0] mod; // module
-reg [1:0] port_value; // port 1,2,3 or 4
+//reg [4:0] mod; // module
+//reg [1:0] port_value; // port 1,2,3 or 4
 
 wire [7:0] data;
 wire [4:0] address;
@@ -60,12 +60,12 @@ assign port = {a6, a5}; // a6 MSB
 initial begin
 	count = 25'd1;
 	user_write_buffer = 1'b0;
-	temp = 32'd30554432; //about 2/3 into 1 second
+	temp = 32'd30554432; //about 2/3 into 1 second / copypaste from another project
 	control_fixed = 1'b0;
 	control_write_base = 32'h10004000; //base address
 	control_write_length = 32'd12; //12 bytes to send
-	mod = 5'd0;
-	port_value = 2'd0;
+//	mod = 5'd0;
+//	port_value = 2'd0;
 //	data = 8'h0;
 //	address = 7'h0;
 end
@@ -75,25 +75,25 @@ begin
 
 if (count<temp)
 begin
-	count <= count+25'd1;
+	count <= count+25'd1; // copy/paste from other project
 end
 
 	
 
-case(address)
+case(address) // go through all modules
 	5'b00001: begin
-					case(port)
-					2'b00: begin
+					case(port) // go through all 3 ports
+					2'b00: begin // Port A
 						if(count==temp && !user_buffer_full) // start transfer condition
 							begin
-									user_buffer_input <= 32'd1; // address value
+									user_buffer_input <= 8'd1; // module value
 									user_write_buffer <= 1'b1; //write qualifier
 									control_go <= 1'b1; //get things started
 									count <= temp+1;
 							end
 						if(count==(temp+1))
 							begin
-								user_buffer_input <= 32'd0; // port value
+								user_buffer_input <= 8'd0; // port value
 								count <= temp+2;
 							end
 						if(count==(temp+2))
@@ -112,17 +112,17 @@ case(address)
 						end // end for 2'b00
 						
 						
-					2'b01: begin
+					2'b01: begin // Port B
 						if(count==temp && !user_buffer_full) // start transfer condition
 							begin
-									user_buffer_input <= 32'd1; // address value
+									user_buffer_input <= 8'd1; // address value
 									user_write_buffer <= 1'b1; //write qualifier
 									control_go <= 1'b1; //get things started
 									count <= temp+1;
 							end
 						if(count==(temp+1))
 							begin
-								user_buffer_input <= 32'd1; // port value
+								user_buffer_input <= 8'd1; // port value
 								count <= temp+2;
 							end
 						if(count==(temp+2))
@@ -141,17 +141,17 @@ case(address)
 						end // end for 2'b01
 						
 						
-					2'b10: begin
+					2'b10: begin // Port C
 						if(count==temp && !user_buffer_full) // start transfer condition
 							begin
-									user_buffer_input <= 32'd1; // address value
+									user_buffer_input <= 8'd1; // address value
 									user_write_buffer <= 1'b1; //write qualifier
 									control_go <= 1'b1; //get things started
 									count <= temp+1;
 							end
 						if(count==(temp+1))
 							begin
-								user_buffer_input <= 32'd2; // port value
+								user_buffer_input <= 8'd2; // port value
 								count <= temp+2;
 							end
 						if(count==(temp+2))
