@@ -1,0 +1,14 @@
+Partition Merge Status : Successful - Wed Feb 26 13:12:05 2020
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : psscrate
+Top-level Entity Name : block
+Family : Cyclone IV E
+Total logic elements : 3,633
+    Total combinational functions : 2,775
+    Dedicated logic registers : 2,281
+Total registers : 2281
+Total pins : 76
+Total virtual pins : 0
+Total memory bits : 149,376
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 1

@@ -11,7 +11,7 @@ module softproc (
 		input  wire        master_template_0_control_go,             //                          .go
 		output wire        master_template_0_control_done,           //                          .done
 		input  wire        master_template_0_user_write_buffer,      //    master_template_0_user.write_buffer
-		input  wire [7:0]  master_template_0_user_buffer_input_data, //                          .buffer_input_data
+		input  wire [31:0] master_template_0_user_buffer_input_data, //                          .buffer_input_data
 		output wire        master_template_0_user_buffer_full,       //                          .buffer_full
 		input  wire        pio_0_external_connection_export,         // pio_0_external_connection.export
 		output wire        sdram_clock_clk,                          //               sdram_clock.clk
@@ -30,9 +30,9 @@ module softproc (
 	wire         nios2_gen2_0_debug_reset_request_reset;                      // nios2_gen2_0:debug_reset_request -> [rst_controller:reset_in0, rst_controller:reset_in1, rst_controller_001:reset_in0, rst_controller_002:reset_in0, rst_controller_003:reset_in0, rst_controller_003:reset_in1]
 	wire         master_template_0_avalon_master_waitrequest;                 // mm_interconnect_0:master_template_0_avalon_master_waitrequest -> master_template_0:master_waitrequest
 	wire  [31:0] master_template_0_avalon_master_address;                     // master_template_0:master_address -> mm_interconnect_0:master_template_0_avalon_master_address
-	wire         master_template_0_avalon_master_byteenable;                  // master_template_0:master_byteenable -> mm_interconnect_0:master_template_0_avalon_master_byteenable
+	wire   [3:0] master_template_0_avalon_master_byteenable;                  // master_template_0:master_byteenable -> mm_interconnect_0:master_template_0_avalon_master_byteenable
 	wire         master_template_0_avalon_master_write;                       // master_template_0:master_write -> mm_interconnect_0:master_template_0_avalon_master_write
-	wire   [7:0] master_template_0_avalon_master_writedata;                   // master_template_0:master_writedata -> mm_interconnect_0:master_template_0_avalon_master_writedata
+	wire  [31:0] master_template_0_avalon_master_writedata;                   // master_template_0:master_writedata -> mm_interconnect_0:master_template_0_avalon_master_writedata
 	wire  [31:0] nios2_gen2_0_data_master_readdata;                           // mm_interconnect_0:nios2_gen2_0_data_master_readdata -> nios2_gen2_0:d_readdata
 	wire         nios2_gen2_0_data_master_waitrequest;                        // mm_interconnect_0:nios2_gen2_0_data_master_waitrequest -> nios2_gen2_0:d_waitrequest
 	wire         nios2_gen2_0_data_master_debugaccess;                        // nios2_gen2_0:debug_mem_slave_debugaccess_to_roms -> mm_interconnect_0:nios2_gen2_0_data_master_debugaccess
@@ -106,7 +106,7 @@ module softproc (
 
 	custom_master #(
 		.MASTER_DIRECTION    (1),
-		.DATA_WIDTH          (8),
+		.DATA_WIDTH          (32),
 		.ADDRESS_WIDTH       (32),
 		.BURST_CAPABLE       (0),
 		.MAXIMUM_BURST_COUNT (2),
@@ -131,7 +131,7 @@ module softproc (
 		.user_buffer_input_data  (master_template_0_user_buffer_input_data),    //                  .export
 		.user_buffer_full        (master_template_0_user_buffer_full),          //                  .export
 		.master_read             (),                                            //       (terminated)
-		.master_readdata         (8'b00000000),                                 //       (terminated)
+		.master_readdata         (32'b00000000000000000000000000000000),        //       (terminated)
 		.master_readdatavalid    (1'b0),                                        //       (terminated)
 		.master_burstcount       (),                                            //       (terminated)
 		.control_read_base       (32'b00000000000000000000000000000000),        //       (terminated)

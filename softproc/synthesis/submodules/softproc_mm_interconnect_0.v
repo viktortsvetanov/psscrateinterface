@@ -13,9 +13,9 @@ module softproc_mm_interconnect_0 (
 		input  wire        onchip_memory2_0_reset1_reset_bridge_in_reset_reset,             //             onchip_memory2_0_reset1_reset_bridge_in_reset.reset
 		input  wire [31:0] master_template_0_avalon_master_address,                         //                           master_template_0_avalon_master.address
 		output wire        master_template_0_avalon_master_waitrequest,                     //                                                          .waitrequest
-		input  wire [0:0]  master_template_0_avalon_master_byteenable,                      //                                                          .byteenable
+		input  wire [3:0]  master_template_0_avalon_master_byteenable,                      //                                                          .byteenable
 		input  wire        master_template_0_avalon_master_write,                           //                                                          .write
-		input  wire [7:0]  master_template_0_avalon_master_writedata,                       //                                                          .writedata
+		input  wire [31:0] master_template_0_avalon_master_writedata,                       //                                                          .writedata
 		input  wire [28:0] nios2_gen2_0_data_master_address,                                //                                  nios2_gen2_0_data_master.address
 		output wire        nios2_gen2_0_data_master_waitrequest,                            //                                                          .waitrequest
 		input  wire [3:0]  nios2_gen2_0_data_master_byteenable,                             //                                                          .byteenable
@@ -67,16 +67,22 @@ module softproc_mm_interconnect_0 (
 	);
 
 	wire          master_template_0_avalon_master_translator_avalon_universal_master_0_waitrequest;   // master_template_0_avalon_master_agent:av_waitrequest -> master_template_0_avalon_master_translator:uav_waitrequest
-	wire    [7:0] master_template_0_avalon_master_translator_avalon_universal_master_0_readdata;      // master_template_0_avalon_master_agent:av_readdata -> master_template_0_avalon_master_translator:uav_readdata
+	wire   [31:0] master_template_0_avalon_master_translator_avalon_universal_master_0_readdata;      // master_template_0_avalon_master_agent:av_readdata -> master_template_0_avalon_master_translator:uav_readdata
 	wire          master_template_0_avalon_master_translator_avalon_universal_master_0_debugaccess;   // master_template_0_avalon_master_translator:uav_debugaccess -> master_template_0_avalon_master_agent:av_debugaccess
 	wire   [31:0] master_template_0_avalon_master_translator_avalon_universal_master_0_address;       // master_template_0_avalon_master_translator:uav_address -> master_template_0_avalon_master_agent:av_address
 	wire          master_template_0_avalon_master_translator_avalon_universal_master_0_read;          // master_template_0_avalon_master_translator:uav_read -> master_template_0_avalon_master_agent:av_read
-	wire    [0:0] master_template_0_avalon_master_translator_avalon_universal_master_0_byteenable;    // master_template_0_avalon_master_translator:uav_byteenable -> master_template_0_avalon_master_agent:av_byteenable
+	wire    [3:0] master_template_0_avalon_master_translator_avalon_universal_master_0_byteenable;    // master_template_0_avalon_master_translator:uav_byteenable -> master_template_0_avalon_master_agent:av_byteenable
 	wire          master_template_0_avalon_master_translator_avalon_universal_master_0_readdatavalid; // master_template_0_avalon_master_agent:av_readdatavalid -> master_template_0_avalon_master_translator:uav_readdatavalid
 	wire          master_template_0_avalon_master_translator_avalon_universal_master_0_lock;          // master_template_0_avalon_master_translator:uav_lock -> master_template_0_avalon_master_agent:av_lock
 	wire          master_template_0_avalon_master_translator_avalon_universal_master_0_write;         // master_template_0_avalon_master_translator:uav_write -> master_template_0_avalon_master_agent:av_write
-	wire    [7:0] master_template_0_avalon_master_translator_avalon_universal_master_0_writedata;     // master_template_0_avalon_master_translator:uav_writedata -> master_template_0_avalon_master_agent:av_writedata
-	wire    [0:0] master_template_0_avalon_master_translator_avalon_universal_master_0_burstcount;    // master_template_0_avalon_master_translator:uav_burstcount -> master_template_0_avalon_master_agent:av_burstcount
+	wire   [31:0] master_template_0_avalon_master_translator_avalon_universal_master_0_writedata;     // master_template_0_avalon_master_translator:uav_writedata -> master_template_0_avalon_master_agent:av_writedata
+	wire    [2:0] master_template_0_avalon_master_translator_avalon_universal_master_0_burstcount;    // master_template_0_avalon_master_translator:uav_burstcount -> master_template_0_avalon_master_agent:av_burstcount
+	wire          rsp_mux_src_valid;                                                                  // rsp_mux:src_valid -> master_template_0_avalon_master_agent:rp_valid
+	wire  [107:0] rsp_mux_src_data;                                                                   // rsp_mux:src_data -> master_template_0_avalon_master_agent:rp_data
+	wire          rsp_mux_src_ready;                                                                  // master_template_0_avalon_master_agent:rp_ready -> rsp_mux:src_ready
+	wire    [4:0] rsp_mux_src_channel;                                                                // rsp_mux:src_channel -> master_template_0_avalon_master_agent:rp_channel
+	wire          rsp_mux_src_startofpacket;                                                          // rsp_mux:src_startofpacket -> master_template_0_avalon_master_agent:rp_startofpacket
+	wire          rsp_mux_src_endofpacket;                                                            // rsp_mux:src_endofpacket -> master_template_0_avalon_master_agent:rp_endofpacket
 	wire          nios2_gen2_0_data_master_translator_avalon_universal_master_0_waitrequest;          // nios2_gen2_0_data_master_agent:av_waitrequest -> nios2_gen2_0_data_master_translator:uav_waitrequest
 	wire   [31:0] nios2_gen2_0_data_master_translator_avalon_universal_master_0_readdata;             // nios2_gen2_0_data_master_agent:av_readdata -> nios2_gen2_0_data_master_translator:uav_readdata
 	wire          nios2_gen2_0_data_master_translator_avalon_universal_master_0_debugaccess;          // nios2_gen2_0_data_master_translator:uav_debugaccess -> nios2_gen2_0_data_master_agent:av_debugaccess
@@ -247,10 +253,16 @@ module softproc_mm_interconnect_0 (
 	wire          cmd_mux_004_src_startofpacket;                                                      // cmd_mux_004:src_startofpacket -> pio_0_s1_agent:cp_startofpacket
 	wire          cmd_mux_004_src_endofpacket;                                                        // cmd_mux_004:src_endofpacket -> pio_0_s1_agent:cp_endofpacket
 	wire          master_template_0_avalon_master_agent_cp_valid;                                     // master_template_0_avalon_master_agent:cp_valid -> router:sink_valid
-	wire   [80:0] master_template_0_avalon_master_agent_cp_data;                                      // master_template_0_avalon_master_agent:cp_data -> router:sink_data
+	wire  [107:0] master_template_0_avalon_master_agent_cp_data;                                      // master_template_0_avalon_master_agent:cp_data -> router:sink_data
 	wire          master_template_0_avalon_master_agent_cp_ready;                                     // router:sink_ready -> master_template_0_avalon_master_agent:cp_ready
 	wire          master_template_0_avalon_master_agent_cp_startofpacket;                             // master_template_0_avalon_master_agent:cp_startofpacket -> router:sink_startofpacket
 	wire          master_template_0_avalon_master_agent_cp_endofpacket;                               // master_template_0_avalon_master_agent:cp_endofpacket -> router:sink_endofpacket
+	wire          router_src_valid;                                                                   // router:src_valid -> cmd_demux:sink_valid
+	wire  [107:0] router_src_data;                                                                    // router:src_data -> cmd_demux:sink_data
+	wire          router_src_ready;                                                                   // cmd_demux:sink_ready -> router:src_ready
+	wire    [4:0] router_src_channel;                                                                 // router:src_channel -> cmd_demux:sink_channel
+	wire          router_src_startofpacket;                                                           // router:src_startofpacket -> cmd_demux:sink_startofpacket
+	wire          router_src_endofpacket;                                                             // router:src_endofpacket -> cmd_demux:sink_endofpacket
 	wire          nios2_gen2_0_data_master_agent_cp_valid;                                            // nios2_gen2_0_data_master_agent:cp_valid -> router_001:sink_valid
 	wire  [107:0] nios2_gen2_0_data_master_agent_cp_data;                                             // nios2_gen2_0_data_master_agent:cp_data -> router_001:sink_data
 	wire          nios2_gen2_0_data_master_agent_cp_ready;                                            // router_001:sink_ready -> nios2_gen2_0_data_master_agent:cp_ready
@@ -460,30 +472,6 @@ module softproc_mm_interconnect_0 (
 	wire    [4:0] rsp_demux_004_src1_channel;                                                         // rsp_demux_004:src1_channel -> rsp_mux_002:sink4_channel
 	wire          rsp_demux_004_src1_startofpacket;                                                   // rsp_demux_004:src1_startofpacket -> rsp_mux_002:sink4_startofpacket
 	wire          rsp_demux_004_src1_endofpacket;                                                     // rsp_demux_004:src1_endofpacket -> rsp_mux_002:sink4_endofpacket
-	wire          rsp_mux_src_valid;                                                                  // rsp_mux:src_valid -> master_template_0_avalon_master_rsp_width_adapter:in_valid
-	wire  [107:0] rsp_mux_src_data;                                                                   // rsp_mux:src_data -> master_template_0_avalon_master_rsp_width_adapter:in_data
-	wire          rsp_mux_src_ready;                                                                  // master_template_0_avalon_master_rsp_width_adapter:in_ready -> rsp_mux:src_ready
-	wire    [4:0] rsp_mux_src_channel;                                                                // rsp_mux:src_channel -> master_template_0_avalon_master_rsp_width_adapter:in_channel
-	wire          rsp_mux_src_startofpacket;                                                          // rsp_mux:src_startofpacket -> master_template_0_avalon_master_rsp_width_adapter:in_startofpacket
-	wire          rsp_mux_src_endofpacket;                                                            // rsp_mux:src_endofpacket -> master_template_0_avalon_master_rsp_width_adapter:in_endofpacket
-	wire          master_template_0_avalon_master_rsp_width_adapter_src_valid;                        // master_template_0_avalon_master_rsp_width_adapter:out_valid -> master_template_0_avalon_master_agent:rp_valid
-	wire   [80:0] master_template_0_avalon_master_rsp_width_adapter_src_data;                         // master_template_0_avalon_master_rsp_width_adapter:out_data -> master_template_0_avalon_master_agent:rp_data
-	wire          master_template_0_avalon_master_rsp_width_adapter_src_ready;                        // master_template_0_avalon_master_agent:rp_ready -> master_template_0_avalon_master_rsp_width_adapter:out_ready
-	wire    [4:0] master_template_0_avalon_master_rsp_width_adapter_src_channel;                      // master_template_0_avalon_master_rsp_width_adapter:out_channel -> master_template_0_avalon_master_agent:rp_channel
-	wire          master_template_0_avalon_master_rsp_width_adapter_src_startofpacket;                // master_template_0_avalon_master_rsp_width_adapter:out_startofpacket -> master_template_0_avalon_master_agent:rp_startofpacket
-	wire          master_template_0_avalon_master_rsp_width_adapter_src_endofpacket;                  // master_template_0_avalon_master_rsp_width_adapter:out_endofpacket -> master_template_0_avalon_master_agent:rp_endofpacket
-	wire          router_src_valid;                                                                   // router:src_valid -> master_template_0_avalon_master_cmd_width_adapter:in_valid
-	wire   [80:0] router_src_data;                                                                    // router:src_data -> master_template_0_avalon_master_cmd_width_adapter:in_data
-	wire          router_src_ready;                                                                   // master_template_0_avalon_master_cmd_width_adapter:in_ready -> router:src_ready
-	wire    [4:0] router_src_channel;                                                                 // router:src_channel -> master_template_0_avalon_master_cmd_width_adapter:in_channel
-	wire          router_src_startofpacket;                                                           // router:src_startofpacket -> master_template_0_avalon_master_cmd_width_adapter:in_startofpacket
-	wire          router_src_endofpacket;                                                             // router:src_endofpacket -> master_template_0_avalon_master_cmd_width_adapter:in_endofpacket
-	wire          master_template_0_avalon_master_cmd_width_adapter_src_valid;                        // master_template_0_avalon_master_cmd_width_adapter:out_valid -> cmd_demux:sink_valid
-	wire  [107:0] master_template_0_avalon_master_cmd_width_adapter_src_data;                         // master_template_0_avalon_master_cmd_width_adapter:out_data -> cmd_demux:sink_data
-	wire          master_template_0_avalon_master_cmd_width_adapter_src_ready;                        // cmd_demux:sink_ready -> master_template_0_avalon_master_cmd_width_adapter:out_ready
-	wire    [4:0] master_template_0_avalon_master_cmd_width_adapter_src_channel;                      // master_template_0_avalon_master_cmd_width_adapter:out_channel -> cmd_demux:sink_channel
-	wire          master_template_0_avalon_master_cmd_width_adapter_src_startofpacket;                // master_template_0_avalon_master_cmd_width_adapter:out_startofpacket -> cmd_demux:sink_startofpacket
-	wire          master_template_0_avalon_master_cmd_width_adapter_src_endofpacket;                  // master_template_0_avalon_master_cmd_width_adapter:out_endofpacket -> cmd_demux:sink_endofpacket
 	wire          onchip_memory2_0_s1_agent_rdata_fifo_src_valid;                                     // onchip_memory2_0_s1_agent:rdata_fifo_src_valid -> avalon_st_adapter:in_0_valid
 	wire   [33:0] onchip_memory2_0_s1_agent_rdata_fifo_src_data;                                      // onchip_memory2_0_s1_agent:rdata_fifo_src_data -> avalon_st_adapter:in_0_data
 	wire          onchip_memory2_0_s1_agent_rdata_fifo_src_ready;                                     // avalon_st_adapter:in_0_ready -> onchip_memory2_0_s1_agent:rdata_fifo_src_ready
@@ -522,11 +510,11 @@ module softproc_mm_interconnect_0 (
 
 	altera_merlin_master_translator #(
 		.AV_ADDRESS_W                (32),
-		.AV_DATA_W                   (8),
+		.AV_DATA_W                   (32),
 		.AV_BURSTCOUNT_W             (1),
-		.AV_BYTEENABLE_W             (1),
+		.AV_BYTEENABLE_W             (4),
 		.UAV_ADDRESS_W               (32),
-		.UAV_BURSTCOUNT_W            (1),
+		.UAV_BURSTCOUNT_W            (3),
 		.USE_READ                    (0),
 		.USE_WRITE                   (1),
 		.USE_BEGINBURSTTRANSFER      (0),
@@ -537,7 +525,7 @@ module softproc_mm_interconnect_0 (
 		.USE_WAITREQUEST             (1),
 		.USE_READRESPONSE            (0),
 		.USE_WRITERESPONSE           (0),
-		.AV_SYMBOLS_PER_WORD         (1),
+		.AV_SYMBOLS_PER_WORD         (4),
 		.AV_ADDRESS_SYMBOLS          (1),
 		.AV_BURSTCOUNT_SYMBOLS       (0),
 		.AV_CONSTANT_BURST_BEHAVIOR  (0),
@@ -1021,51 +1009,51 @@ module softproc_mm_interconnect_0 (
 	);
 
 	altera_merlin_master_agent #(
-		.PKT_ORI_BURST_SIZE_H      (80),
-		.PKT_ORI_BURST_SIZE_L      (78),
-		.PKT_RESPONSE_STATUS_H     (77),
-		.PKT_RESPONSE_STATUS_L     (76),
-		.PKT_QOS_H                 (61),
-		.PKT_QOS_L                 (61),
-		.PKT_DATA_SIDEBAND_H       (59),
-		.PKT_DATA_SIDEBAND_L       (59),
-		.PKT_ADDR_SIDEBAND_H       (58),
-		.PKT_ADDR_SIDEBAND_L       (58),
-		.PKT_BURST_TYPE_H          (57),
-		.PKT_BURST_TYPE_L          (56),
-		.PKT_CACHE_H               (75),
-		.PKT_CACHE_L               (72),
-		.PKT_THREAD_ID_H           (68),
-		.PKT_THREAD_ID_L           (68),
-		.PKT_BURST_SIZE_H          (55),
-		.PKT_BURST_SIZE_L          (53),
-		.PKT_TRANS_EXCLUSIVE       (46),
-		.PKT_TRANS_LOCK            (45),
-		.PKT_BEGIN_BURST           (60),
-		.PKT_PROTECTION_H          (71),
-		.PKT_PROTECTION_L          (69),
-		.PKT_BURSTWRAP_H           (52),
-		.PKT_BURSTWRAP_L           (50),
-		.PKT_BYTE_CNT_H            (49),
-		.PKT_BYTE_CNT_L            (47),
-		.PKT_ADDR_H                (40),
-		.PKT_ADDR_L                (9),
-		.PKT_TRANS_COMPRESSED_READ (41),
-		.PKT_TRANS_POSTED          (42),
-		.PKT_TRANS_WRITE           (43),
-		.PKT_TRANS_READ            (44),
-		.PKT_DATA_H                (7),
+		.PKT_ORI_BURST_SIZE_H      (107),
+		.PKT_ORI_BURST_SIZE_L      (105),
+		.PKT_RESPONSE_STATUS_H     (104),
+		.PKT_RESPONSE_STATUS_L     (103),
+		.PKT_QOS_H                 (88),
+		.PKT_QOS_L                 (88),
+		.PKT_DATA_SIDEBAND_H       (86),
+		.PKT_DATA_SIDEBAND_L       (86),
+		.PKT_ADDR_SIDEBAND_H       (85),
+		.PKT_ADDR_SIDEBAND_L       (85),
+		.PKT_BURST_TYPE_H          (84),
+		.PKT_BURST_TYPE_L          (83),
+		.PKT_CACHE_H               (102),
+		.PKT_CACHE_L               (99),
+		.PKT_THREAD_ID_H           (95),
+		.PKT_THREAD_ID_L           (95),
+		.PKT_BURST_SIZE_H          (82),
+		.PKT_BURST_SIZE_L          (80),
+		.PKT_TRANS_EXCLUSIVE       (73),
+		.PKT_TRANS_LOCK            (72),
+		.PKT_BEGIN_BURST           (87),
+		.PKT_PROTECTION_H          (98),
+		.PKT_PROTECTION_L          (96),
+		.PKT_BURSTWRAP_H           (79),
+		.PKT_BURSTWRAP_L           (77),
+		.PKT_BYTE_CNT_H            (76),
+		.PKT_BYTE_CNT_L            (74),
+		.PKT_ADDR_H                (67),
+		.PKT_ADDR_L                (36),
+		.PKT_TRANS_COMPRESSED_READ (68),
+		.PKT_TRANS_POSTED          (69),
+		.PKT_TRANS_WRITE           (70),
+		.PKT_TRANS_READ            (71),
+		.PKT_DATA_H                (31),
 		.PKT_DATA_L                (0),
-		.PKT_BYTEEN_H              (8),
-		.PKT_BYTEEN_L              (8),
-		.PKT_SRC_ID_H              (64),
-		.PKT_SRC_ID_L              (62),
-		.PKT_DEST_ID_H             (67),
-		.PKT_DEST_ID_L             (65),
-		.ST_DATA_W                 (81),
+		.PKT_BYTEEN_H              (35),
+		.PKT_BYTEEN_L              (32),
+		.PKT_SRC_ID_H              (91),
+		.PKT_SRC_ID_L              (89),
+		.PKT_DEST_ID_H             (94),
+		.PKT_DEST_ID_L             (92),
+		.ST_DATA_W                 (108),
 		.ST_CHANNEL_W              (5),
-		.AV_BURSTCOUNT_W           (1),
-		.SUPPRESS_0_BYTEEN_RSP     (1),
+		.AV_BURSTCOUNT_W           (3),
+		.SUPPRESS_0_BYTEEN_RSP     (0),
 		.ID                        (0),
 		.BURSTWRAP_VALUE           (7),
 		.CACHE_VALUE               (0),
@@ -1091,12 +1079,12 @@ module softproc_mm_interconnect_0 (
 		.cp_startofpacket      (master_template_0_avalon_master_agent_cp_startofpacket),                             //          .startofpacket
 		.cp_endofpacket        (master_template_0_avalon_master_agent_cp_endofpacket),                               //          .endofpacket
 		.cp_ready              (master_template_0_avalon_master_agent_cp_ready),                                     //          .ready
-		.rp_valid              (master_template_0_avalon_master_rsp_width_adapter_src_valid),                        //        rp.valid
-		.rp_data               (master_template_0_avalon_master_rsp_width_adapter_src_data),                         //          .data
-		.rp_channel            (master_template_0_avalon_master_rsp_width_adapter_src_channel),                      //          .channel
-		.rp_startofpacket      (master_template_0_avalon_master_rsp_width_adapter_src_startofpacket),                //          .startofpacket
-		.rp_endofpacket        (master_template_0_avalon_master_rsp_width_adapter_src_endofpacket),                  //          .endofpacket
-		.rp_ready              (master_template_0_avalon_master_rsp_width_adapter_src_ready),                        //          .ready
+		.rp_valid              (rsp_mux_src_valid),                                                                  //        rp.valid
+		.rp_data               (rsp_mux_src_data),                                                                   //          .data
+		.rp_channel            (rsp_mux_src_channel),                                                                //          .channel
+		.rp_startofpacket      (rsp_mux_src_startofpacket),                                                          //          .startofpacket
+		.rp_endofpacket        (rsp_mux_src_endofpacket),                                                            //          .endofpacket
+		.rp_ready              (rsp_mux_src_ready),                                                                  //          .ready
 		.av_response           (),                                                                                   // (terminated)
 		.av_writeresponsevalid ()                                                                                    // (terminated)
 	);
@@ -2017,20 +2005,20 @@ module softproc_mm_interconnect_0 (
 	);
 
 	softproc_mm_interconnect_0_cmd_demux cmd_demux (
-		.clk                (sys_sdram_pll_0_sys_clk_clk),                                         //       clk.clk
-		.reset              (master_template_0_clock_reset_reset_reset_bridge_in_reset_reset),     // clk_reset.reset
-		.sink_ready         (master_template_0_avalon_master_cmd_width_adapter_src_ready),         //      sink.ready
-		.sink_channel       (master_template_0_avalon_master_cmd_width_adapter_src_channel),       //          .channel
-		.sink_data          (master_template_0_avalon_master_cmd_width_adapter_src_data),          //          .data
-		.sink_startofpacket (master_template_0_avalon_master_cmd_width_adapter_src_startofpacket), //          .startofpacket
-		.sink_endofpacket   (master_template_0_avalon_master_cmd_width_adapter_src_endofpacket),   //          .endofpacket
-		.sink_valid         (master_template_0_avalon_master_cmd_width_adapter_src_valid),         //          .valid
-		.src0_ready         (cmd_demux_src0_ready),                                                //      src0.ready
-		.src0_valid         (cmd_demux_src0_valid),                                                //          .valid
-		.src0_data          (cmd_demux_src0_data),                                                 //          .data
-		.src0_channel       (cmd_demux_src0_channel),                                              //          .channel
-		.src0_startofpacket (cmd_demux_src0_startofpacket),                                        //          .startofpacket
-		.src0_endofpacket   (cmd_demux_src0_endofpacket)                                           //          .endofpacket
+		.clk                (sys_sdram_pll_0_sys_clk_clk),                                     //       clk.clk
+		.reset              (master_template_0_clock_reset_reset_reset_bridge_in_reset_reset), // clk_reset.reset
+		.sink_ready         (router_src_ready),                                                //      sink.ready
+		.sink_channel       (router_src_channel),                                              //          .channel
+		.sink_data          (router_src_data),                                                 //          .data
+		.sink_startofpacket (router_src_startofpacket),                                        //          .startofpacket
+		.sink_endofpacket   (router_src_endofpacket),                                          //          .endofpacket
+		.sink_valid         (router_src_valid),                                                //          .valid
+		.src0_ready         (cmd_demux_src0_ready),                                            //      src0.ready
+		.src0_valid         (cmd_demux_src0_valid),                                            //          .valid
+		.src0_data          (cmd_demux_src0_data),                                             //          .data
+		.src0_channel       (cmd_demux_src0_channel),                                          //          .channel
+		.src0_startofpacket (cmd_demux_src0_startofpacket),                                    //          .startofpacket
+		.src0_endofpacket   (cmd_demux_src0_endofpacket)                                       //          .endofpacket
 	);
 
 	softproc_mm_interconnect_0_cmd_demux_001 cmd_demux_001 (
@@ -2454,138 +2442,6 @@ module softproc_mm_interconnect_0 (
 		.sink4_data          (rsp_demux_004_src1_data),                                         //          .data
 		.sink4_startofpacket (rsp_demux_004_src1_startofpacket),                                //          .startofpacket
 		.sink4_endofpacket   (rsp_demux_004_src1_endofpacket)                                   //          .endofpacket
-	);
-
-	altera_merlin_width_adapter #(
-		.IN_PKT_ADDR_H                 (67),
-		.IN_PKT_ADDR_L                 (36),
-		.IN_PKT_DATA_H                 (31),
-		.IN_PKT_DATA_L                 (0),
-		.IN_PKT_BYTEEN_H               (35),
-		.IN_PKT_BYTEEN_L               (32),
-		.IN_PKT_BYTE_CNT_H             (76),
-		.IN_PKT_BYTE_CNT_L             (74),
-		.IN_PKT_TRANS_COMPRESSED_READ  (68),
-		.IN_PKT_TRANS_WRITE            (70),
-		.IN_PKT_BURSTWRAP_H            (79),
-		.IN_PKT_BURSTWRAP_L            (77),
-		.IN_PKT_BURST_SIZE_H           (82),
-		.IN_PKT_BURST_SIZE_L           (80),
-		.IN_PKT_RESPONSE_STATUS_H      (104),
-		.IN_PKT_RESPONSE_STATUS_L      (103),
-		.IN_PKT_TRANS_EXCLUSIVE        (73),
-		.IN_PKT_BURST_TYPE_H           (84),
-		.IN_PKT_BURST_TYPE_L           (83),
-		.IN_PKT_ORI_BURST_SIZE_L       (105),
-		.IN_PKT_ORI_BURST_SIZE_H       (107),
-		.IN_ST_DATA_W                  (108),
-		.OUT_PKT_ADDR_H                (40),
-		.OUT_PKT_ADDR_L                (9),
-		.OUT_PKT_DATA_H                (7),
-		.OUT_PKT_DATA_L                (0),
-		.OUT_PKT_BYTEEN_H              (8),
-		.OUT_PKT_BYTEEN_L              (8),
-		.OUT_PKT_BYTE_CNT_H            (49),
-		.OUT_PKT_BYTE_CNT_L            (47),
-		.OUT_PKT_TRANS_COMPRESSED_READ (41),
-		.OUT_PKT_BURST_SIZE_H          (55),
-		.OUT_PKT_BURST_SIZE_L          (53),
-		.OUT_PKT_RESPONSE_STATUS_H     (77),
-		.OUT_PKT_RESPONSE_STATUS_L     (76),
-		.OUT_PKT_TRANS_EXCLUSIVE       (46),
-		.OUT_PKT_BURST_TYPE_H          (57),
-		.OUT_PKT_BURST_TYPE_L          (56),
-		.OUT_PKT_ORI_BURST_SIZE_L      (78),
-		.OUT_PKT_ORI_BURST_SIZE_H      (80),
-		.OUT_ST_DATA_W                 (81),
-		.ST_CHANNEL_W                  (5),
-		.OPTIMIZE_FOR_RSP              (1),
-		.RESPONSE_PATH                 (1),
-		.CONSTANT_BURST_SIZE           (1),
-		.PACKING                       (1),
-		.ENABLE_ADDRESS_ALIGNMENT      (0)
-	) master_template_0_avalon_master_rsp_width_adapter (
-		.clk                  (sys_sdram_pll_0_sys_clk_clk),                                         //       clk.clk
-		.reset                (master_template_0_clock_reset_reset_reset_bridge_in_reset_reset),     // clk_reset.reset
-		.in_valid             (rsp_mux_src_valid),                                                   //      sink.valid
-		.in_channel           (rsp_mux_src_channel),                                                 //          .channel
-		.in_startofpacket     (rsp_mux_src_startofpacket),                                           //          .startofpacket
-		.in_endofpacket       (rsp_mux_src_endofpacket),                                             //          .endofpacket
-		.in_ready             (rsp_mux_src_ready),                                                   //          .ready
-		.in_data              (rsp_mux_src_data),                                                    //          .data
-		.out_endofpacket      (master_template_0_avalon_master_rsp_width_adapter_src_endofpacket),   //       src.endofpacket
-		.out_data             (master_template_0_avalon_master_rsp_width_adapter_src_data),          //          .data
-		.out_channel          (master_template_0_avalon_master_rsp_width_adapter_src_channel),       //          .channel
-		.out_valid            (master_template_0_avalon_master_rsp_width_adapter_src_valid),         //          .valid
-		.out_ready            (master_template_0_avalon_master_rsp_width_adapter_src_ready),         //          .ready
-		.out_startofpacket    (master_template_0_avalon_master_rsp_width_adapter_src_startofpacket), //          .startofpacket
-		.in_command_size_data (3'b000)                                                               // (terminated)
-	);
-
-	altera_merlin_width_adapter #(
-		.IN_PKT_ADDR_H                 (40),
-		.IN_PKT_ADDR_L                 (9),
-		.IN_PKT_DATA_H                 (7),
-		.IN_PKT_DATA_L                 (0),
-		.IN_PKT_BYTEEN_H               (8),
-		.IN_PKT_BYTEEN_L               (8),
-		.IN_PKT_BYTE_CNT_H             (49),
-		.IN_PKT_BYTE_CNT_L             (47),
-		.IN_PKT_TRANS_COMPRESSED_READ  (41),
-		.IN_PKT_TRANS_WRITE            (43),
-		.IN_PKT_BURSTWRAP_H            (52),
-		.IN_PKT_BURSTWRAP_L            (50),
-		.IN_PKT_BURST_SIZE_H           (55),
-		.IN_PKT_BURST_SIZE_L           (53),
-		.IN_PKT_RESPONSE_STATUS_H      (77),
-		.IN_PKT_RESPONSE_STATUS_L      (76),
-		.IN_PKT_TRANS_EXCLUSIVE        (46),
-		.IN_PKT_BURST_TYPE_H           (57),
-		.IN_PKT_BURST_TYPE_L           (56),
-		.IN_PKT_ORI_BURST_SIZE_L       (78),
-		.IN_PKT_ORI_BURST_SIZE_H       (80),
-		.IN_ST_DATA_W                  (81),
-		.OUT_PKT_ADDR_H                (67),
-		.OUT_PKT_ADDR_L                (36),
-		.OUT_PKT_DATA_H                (31),
-		.OUT_PKT_DATA_L                (0),
-		.OUT_PKT_BYTEEN_H              (35),
-		.OUT_PKT_BYTEEN_L              (32),
-		.OUT_PKT_BYTE_CNT_H            (76),
-		.OUT_PKT_BYTE_CNT_L            (74),
-		.OUT_PKT_TRANS_COMPRESSED_READ (68),
-		.OUT_PKT_BURST_SIZE_H          (82),
-		.OUT_PKT_BURST_SIZE_L          (80),
-		.OUT_PKT_RESPONSE_STATUS_H     (104),
-		.OUT_PKT_RESPONSE_STATUS_L     (103),
-		.OUT_PKT_TRANS_EXCLUSIVE       (73),
-		.OUT_PKT_BURST_TYPE_H          (84),
-		.OUT_PKT_BURST_TYPE_L          (83),
-		.OUT_PKT_ORI_BURST_SIZE_L      (105),
-		.OUT_PKT_ORI_BURST_SIZE_H      (107),
-		.OUT_ST_DATA_W                 (108),
-		.ST_CHANNEL_W                  (5),
-		.OPTIMIZE_FOR_RSP              (0),
-		.RESPONSE_PATH                 (0),
-		.CONSTANT_BURST_SIZE           (1),
-		.PACKING                       (1),
-		.ENABLE_ADDRESS_ALIGNMENT      (0)
-	) master_template_0_avalon_master_cmd_width_adapter (
-		.clk                  (sys_sdram_pll_0_sys_clk_clk),                                         //       clk.clk
-		.reset                (master_template_0_clock_reset_reset_reset_bridge_in_reset_reset),     // clk_reset.reset
-		.in_valid             (router_src_valid),                                                    //      sink.valid
-		.in_channel           (router_src_channel),                                                  //          .channel
-		.in_startofpacket     (router_src_startofpacket),                                            //          .startofpacket
-		.in_endofpacket       (router_src_endofpacket),                                              //          .endofpacket
-		.in_ready             (router_src_ready),                                                    //          .ready
-		.in_data              (router_src_data),                                                     //          .data
-		.out_endofpacket      (master_template_0_avalon_master_cmd_width_adapter_src_endofpacket),   //       src.endofpacket
-		.out_data             (master_template_0_avalon_master_cmd_width_adapter_src_data),          //          .data
-		.out_channel          (master_template_0_avalon_master_cmd_width_adapter_src_channel),       //          .channel
-		.out_valid            (master_template_0_avalon_master_cmd_width_adapter_src_valid),         //          .valid
-		.out_ready            (master_template_0_avalon_master_cmd_width_adapter_src_ready),         //          .ready
-		.out_startofpacket    (master_template_0_avalon_master_cmd_width_adapter_src_startofpacket), //          .startofpacket
-		.in_command_size_data (3'b000)                                                               // (terminated)
 	);
 
 	softproc_mm_interconnect_0_avalon_st_adapter #(

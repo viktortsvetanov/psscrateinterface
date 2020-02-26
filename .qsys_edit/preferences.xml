@@ -6,8 +6,10 @@
    <connections preferredWidth="207" />
    <irq preferredWidth="34" />
    <inputclock preferredWidth="204" />
+   <name preferredWidth="225" />
   </columns>
  </systemtable>
- <library expandedCategories="Project,Library" />
+ <library
+   expandedCategories="Project,Library/University Program,Library/Basic Functions/Clocks; PLLs and Resets,Library,Library/Interface Protocols/Transceiver PLL,Library/Basic Functions,Library/University Program/Clock,Library/Interface Protocols,Library/Basic Functions/Clocks; PLLs and Resets/PLL" />
  <window width="1920" height="1080" x="0" y="0" />
 </preferences>

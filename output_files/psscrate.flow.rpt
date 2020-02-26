@@ -1,5 +1,5 @@
 Flow report for psscrate
-Wed Feb 19 12:23:05 2020
+Wed Feb 26 13:13:01 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,22 +40,22 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Wed Feb 19 12:23:05 2020       ;
+; Flow Status                        ; Successful - Wed Feb 26 13:13:01 2020       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; psscrate                                    ;
-; Top-level Entity Name              ; control_write_logic                         ;
+; Top-level Entity Name              ; block                                       ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; N/A until Partition Merge                   ;
-;     Total combinational functions  ; N/A until Partition Merge                   ;
-;     Dedicated logic registers      ; N/A until Partition Merge                   ;
-; Total registers                    ; N/A until Partition Merge                   ;
-; Total pins                         ; N/A until Partition Merge                   ;
-; Total virtual pins                 ; N/A until Partition Merge                   ;
-; Total memory bits                  ; N/A until Partition Merge                   ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
-; Total PLLs                         ; N/A until Partition Merge                   ;
+; Total logic elements               ; 3,471 / 114,480 ( 3 % )                     ;
+;     Total combinational functions  ; 2,785 / 114,480 ( 2 % )                     ;
+;     Dedicated logic registers      ; 2,220 / 114,480 ( 2 % )                     ;
+; Total registers                    ; 2339                                        ;
+; Total pins                         ; 76 / 529 ( 14 % )                           ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 149,376 / 3,981,312 ( 4 % )                 ;
+; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                             ;
+; Total PLLs                         ; 1 / 4 ( 25 % )                              ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -64,64 +64,112 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 02/19/2020 12:22:53 ;
+; Start date & time ; 02/26/2020 13:11:02 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; psscrate            ;
 +-------------------+---------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                                        ;
-+-------------------------------------+------------------------------------------------------------+---------------+---------------------+----------------+
-; Assignment Name                     ; Value                                                      ; Default Value ; Entity Name         ; Section Id     ;
-+-------------------------------------+------------------------------------------------------------+---------------+---------------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 48751581671556.158211497311440                             ; --            ; --                  ; --             ;
-; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                                                ; --            ; --                  ; eda_simulation ;
-; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)                                  ; <None>        ; --                  ; --             ;
-; EDA_TIME_SCALE                      ; 1 ps                                                       ; --            ; --                  ; eda_simulation ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                                         ; --            ; --                  ; --             ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                                          ; --            ; --                  ; --             ;
-; MISC_FILE                           ; softproc/synthesis/../softproc.cmp                         ; --            ; --                  ; --             ;
-; MISC_FILE                           ; softproc/synthesis/../../softproc.qsys                     ; --            ; --                  ; --             ;
-; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                                       ; --            ; --                  ; --             ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family)                     ; --            ; control_write_logic ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family)                     ; --            ; control_write_logic ; Top            ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family)                     ; --            ; control_write_logic ; Top            ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                                        ; --            ; --                  ; --             ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                      ; --            ; --                  ; --             ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                                               ; --            ; --                  ; --             ;
-; SLD_FILE                            ; softproc/synthesis/softproc.regmap                         ; --            ; --                  ; --             ;
-; SLD_FILE                            ; softproc/synthesis/softproc.debuginfo                      ; --            ; --                  ; --             ;
-; SLD_INFO                            ; QSYS_NAME softproc HAS_SOPCINFO 1 GENERATION_ID 1581953459 ; --            ; softproc            ; --             ;
-; SOPCINFO_FILE                       ; softproc/synthesis/../../softproc.sopcinfo                 ; --            ; --                  ; --             ;
-; SYNTHESIS_ONLY_QIP                  ; On                                                         ; --            ; --                  ; --             ;
-; TOP_LEVEL_ENTITY                    ; control_write_logic                                        ; psscrate      ; --                  ; --             ;
-+-------------------------------------+------------------------------------------------------------+---------------+---------------------+----------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                                                                                                                                             ;
++-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------+-------------+------------------+
+; Assignment Name                     ; Value                                                                                                                                                                                 ; Default Value ; Entity Name ; Section Id       ;
++-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------+-------------+------------------+
+; COMPILER_SIGNATURE_ID               ; 48751581671556.158272266128116                                                                                                                                                        ; --            ; --          ; --               ;
+; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                                                                                                                                                                           ; --            ; --          ; eda_simulation   ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)                                                                                                                                                             ; <None>        ; --          ; --               ;
+; EDA_TIME_SCALE                      ; 1 ps                                                                                                                                                                                  ; --            ; --          ; eda_simulation   ;
+; ENABLE_SIGNALTAP                    ; On                                                                                                                                                                                    ; --            ; --          ; --               ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                                                                                                                                                                    ; --            ; --          ; --               ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                                                                                                                                                                     ; --            ; --          ; --               ;
+; MISC_FILE                           ; softproc/synthesis/../softproc.cmp                                                                                                                                                    ; --            ; --          ; --               ;
+; MISC_FILE                           ; softproc/synthesis/../../softproc.qsys                                                                                                                                                ; --            ; --          ; --               ;
+; MISC_FILE                           ; pll.bsf                                                                                                                                                                               ; --            ; --          ; --               ;
+; MISC_FILE                           ; pll_bb.v                                                                                                                                                                              ; --            ; --          ; --               ;
+; MISC_FILE                           ; pll.ppf                                                                                                                                                                               ; --            ; --          ; --               ;
+; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                                                                                                                                                                  ; --            ; --          ; --               ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family)                                                                                                                                                ; --            ; block       ; Top              ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family)                                                                                                                                                ; --            ; block       ; Top              ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family)                                                                                                                                                ; --            ; block       ; Top              ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                                                                                                                                                                   ; --            ; --          ; --               ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                                                                                                                                                 ; --            ; --          ; --               ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                                                                                                                                                                          ; --            ; --          ; --               ;
+; SLD_FILE                            ; softproc/synthesis/softproc.regmap                                                                                                                                                    ; --            ; --          ; --               ;
+; SLD_FILE                            ; softproc/synthesis/softproc.debuginfo                                                                                                                                                 ; --            ; --          ; --               ;
+; SLD_FILE                            ; db/stp6_auto_stripped.stp                                                                                                                                                             ; --            ; --          ; --               ;
+; SLD_INFO                            ; QSYS_NAME softproc HAS_SOPCINFO 1 GENERATION_ID 1582650123                                                                                                                            ; --            ; softproc    ; --               ;
+; SLD_NODE_CREATOR_ID                 ; 110                                                                                                                                                                                   ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_ENTITY_NAME                ; sld_signaltap                                                                                                                                                                         ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_RAM_BLOCK_TYPE=AUTO                                                                                                                                                               ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_NODE_INFO=805334528                                                                                                                                                               ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_POWER_UP_TRIGGER=0                                                                                                                                                                ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH=0                                                                                                                                         ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_SEGMENT_SIZE=128                                                                                                                                                                  ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ATTRIBUTE_MEM_MODE=OFF                                                                                                                                                            ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INCREMENTAL_ROUTING=1                                                                                                                                                             ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_LEVEL=1                                                                                                                                                                   ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_SAMPLE_DEPTH=128                                                                                                                                                                  ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_IN_ENABLED=0                                                                                                                                                              ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_PIPELINE=0                                                                                                                                                                ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_RAM_PIPELINE=0                                                                                                                                                                    ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_COUNTER_PIPELINE=0                                                                                                                                                                ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ADVANCED_TRIGGER_ENTITY=basic,1,                                                                                                                                                  ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_LEVEL_PIPELINE=1                                                                                                                                                          ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ENABLE_ADVANCED_TRIGGER=0                                                                                                                                                         ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STATE_FLOW_USE_GENERATED=0                                                                                                                                                        ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STATE_BITS=11                                                                                                                                                                     ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_BUFFER_FULL_STOP=1                                                                                                                                                                ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_CURRENT_RESOURCE_WIDTH=1                                                                                                                                                          ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_DATA_BITS=47                                                                                                                                                                      ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_BITS=47                                                                                                                                                                   ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STORAGE_QUALIFIER_BITS=47                                                                                                                                                         ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INVERSION_MASK=000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INVERSION_MASK_LENGTH=162                                                                                                                                                         ; --            ; --          ; auto_signaltap_0 ;
+; SOPCINFO_FILE                       ; softproc/synthesis/../../softproc.sopcinfo                                                                                                                                            ; --            ; --          ; --               ;
+; SYNTHESIS_ONLY_QIP                  ; On                                                                                                                                                                                    ; --            ; --          ; --               ;
+; TOP_LEVEL_ENTITY                    ; block                                                                                                                                                                                 ; psscrate      ; --          ; --               ;
+; USE_SIGNALTAP_FILE                  ; output_files/stp6.stp                                                                                                                                                                 ; --            ; --          ; --               ;
++-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------+-------------+------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------+
-; Flow Elapsed Time                                                                                                          ;
-+------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
-+------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Elaboration ; 00:00:13     ; 1.0                     ; 4731 MB             ; 00:00:28                           ;
-; Total                  ; 00:00:13     ; --                      ; --                  ; 00:00:28                           ;
-+------------------------+--------------+-------------------------+---------------------+------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                        ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis ; 00:00:55     ; 1.0                     ; 4946 MB             ; 00:01:25                           ;
+; Partition Merge      ; 00:00:03     ; 1.0                     ; 4716 MB             ; 00:00:03                           ;
+; Fitter               ; 00:00:26     ; 1.0                     ; 5779 MB             ; 00:00:37                           ;
+; Assembler            ; 00:00:06     ; 1.0                     ; 4706 MB             ; 00:00:05                           ;
+; Timing Analyzer      ; 00:00:05     ; 1.2                     ; 4890 MB             ; 00:00:06                           ;
+; EDA Netlist Writer   ; 00:00:13     ; 1.0                     ; 4716 MB             ; 00:00:08                           ;
+; Total                ; 00:01:48     ; --                      ; --                  ; 00:02:24                           ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+--------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                      ;
-+------------------------+------------------+------------+------------+----------------+
-; Module Name            ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
-+------------------------+------------------+------------+------------+----------------+
-; Analysis & Elaboration ; Viktor           ; Windows 10 ; 10.0       ; x86_64         ;
-+------------------------+------------------+------------+------------+----------------+
++------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                    ;
++----------------------+------------------+------------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++----------------------+------------------+------------+------------+----------------+
+; Analysis & Synthesis ; Viktor           ; Windows 10 ; 10.0       ; x86_64         ;
+; Partition Merge      ; Viktor           ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; Viktor           ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; Viktor           ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; Viktor           ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; Viktor           ; Windows 10 ; 10.0       ; x86_64         ;
++----------------------+------------------+------------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
-quartus_map --read_settings_files=on --write_settings_files=off psscrate -c psscrate --analysis_and_elaboration
+quartus_map --read_settings_files=on --write_settings_files=off psscrate -c psscrate
+quartus_cdb --read_settings_files=off --write_settings_files=off psscrate -c psscrate --merge=on
+quartus_fit --read_settings_files=off --write_settings_files=off psscrate -c psscrate
+quartus_asm --read_settings_files=off --write_settings_files=off psscrate -c psscrate
+quartus_sta psscrate -c psscrate
+quartus_eda --read_settings_files=off --write_settings_files=off psscrate -c psscrate
 
 
 
