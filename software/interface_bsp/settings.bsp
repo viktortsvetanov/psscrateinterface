@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Feb 26, 2020 1:14:03 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1582722843323</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Feb 28, 2020 10:55:12 AM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1582887312283</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\PSS\project\psscrateinterface\software\interface_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\softproc.sopcinfo</SopcDesignFile>

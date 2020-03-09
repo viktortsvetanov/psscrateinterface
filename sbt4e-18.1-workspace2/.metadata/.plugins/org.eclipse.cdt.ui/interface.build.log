@@ -1,9 +1,9 @@
-13:14:39 **** Incremental Build of configuration Nios II for project interface ****
+15:40:55 **** Incremental Build of configuration Nios II for project interface ****
 make all 
 Info: Building ../interface_bsp/
 C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../interface_bsp/
 [BSP build complete]
 [interface build complete]
 
-13:14:41 Build Finished (took 1s.89ms)
+15:40:57 Build Finished (took 1s.93ms)
 

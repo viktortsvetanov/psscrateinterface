@@ -228,31 +228,63 @@
 					"strict" : false
 				},
 				{
-					"name" : "a1",
+					"name" : "ADDRESS[5]",
 					"strict" : false
 				},
 				{
-					"name" : "a2",
+					"name" : "ADDRESS[0]",
 					"strict" : false
 				},
 				{
-					"name" : "a3",
+					"name" : "DATA[0]",
 					"strict" : false
 				},
 				{
-					"name" : "a0",
+					"name" : "ADDRESS[6]",
 					"strict" : false
 				},
 				{
-					"name" : "a4",
+					"name" : "ADDRESS[1]",
 					"strict" : false
 				},
 				{
-					"name" : "a5",
+					"name" : "DATA[1]",
 					"strict" : false
 				},
 				{
-					"name" : "a6",
+					"name" : "DATA[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ADDRESS[2]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ADDRESS[3]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ADDRESS[4]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA[5]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA[6]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA[7]",
 					"strict" : false
 				},
 				{

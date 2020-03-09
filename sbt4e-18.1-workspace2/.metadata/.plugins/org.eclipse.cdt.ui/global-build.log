@@ -1,16 +1,148 @@
-13:14:33 **** Incremental Build of configuration Nios II for project interface ****
+13:59:33 **** Incremental Build of configuration Nios II for project interface ****
 make all 
 Info: Building ../interface_bsp/
 C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../interface_bsp/
 [BSP build complete]
 [interface build complete]
-13:14:38 **** Build of configuration Nios II for project interface ****
+13:59:38 **** Build of configuration Nios II for project interface ****
 make all 
 Info: Building ../interface_bsp/
 C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../interface_bsp/
 [BSP build complete]
 [interface build complete]
-13:14:39 **** Incremental Build of configuration Nios II for project interface ****
+13:59:40 **** Incremental Build of configuration Nios II for project interface ****
+make all 
+Info: Building ../interface_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../interface_bsp/
+[BSP build complete]
+[interface build complete]
+14:00:29 **** Build of configuration Nios II for project interface ****
+make all 
+Info: Building ../interface_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../interface_bsp/
+[BSP build complete]
+[interface build complete]
+14:00:30 **** Incremental Build of configuration Nios II for project interface ****
+make all 
+Info: Building ../interface_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../interface_bsp/
+[BSP build complete]
+[interface build complete]
+14:09:04 **** Build of configuration Nios II for project interface ****
+make all 
+Info: Building ../interface_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../interface_bsp/
+[BSP build complete]
+[interface build complete]
+14:09:06 **** Incremental Build of configuration Nios II for project interface ****
+make all 
+Info: Building ../interface_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../interface_bsp/
+[BSP build complete]
+[interface build complete]
+14:18:47 **** Build of configuration Nios II for project interface ****
+make all 
+Info: Building ../interface_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../interface_bsp/
+[BSP build complete]
+[interface build complete]
+14:18:48 **** Incremental Build of configuration Nios II for project interface ****
+make all 
+Info: Building ../interface_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../interface_bsp/
+[BSP build complete]
+[interface build complete]
+14:48:41 **** Build of configuration Nios II for project interface ****
+make all 
+Info: Building ../interface_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../interface_bsp/
+[BSP build complete]
+[interface build complete]
+14:48:43 **** Incremental Build of configuration Nios II for project interface ****
+make all 
+Info: Building ../interface_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../interface_bsp/
+[BSP build complete]
+[interface build complete]
+14:55:48 **** Build of configuration Nios II for project interface ****
+make all 
+Info: Building ../interface_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../interface_bsp/
+[BSP build complete]
+[interface build complete]
+14:55:50 **** Incremental Build of configuration Nios II for project interface ****
+make all 
+Info: Building ../interface_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../interface_bsp/
+[BSP build complete]
+[interface build complete]
+14:59:28 **** Build of configuration Nios II for project interface ****
+make all 
+Info: Building ../interface_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../interface_bsp/
+[BSP build complete]
+[interface build complete]
+14:59:29 **** Incremental Build of configuration Nios II for project interface ****
+make all 
+Info: Building ../interface_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../interface_bsp/
+[BSP build complete]
+[interface build complete]
+15:01:08 **** Build of configuration Nios II for project interface ****
+make all 
+Info: Building ../interface_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../interface_bsp/
+[BSP build complete]
+[interface build complete]
+15:01:09 **** Incremental Build of configuration Nios II for project interface ****
+make all 
+Info: Building ../interface_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../interface_bsp/
+[BSP build complete]
+[interface build complete]
+15:06:26 **** Build of configuration Nios II for project interface ****
+make all 
+Info: Building ../interface_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../interface_bsp/
+[BSP build complete]
+[interface build complete]
+15:06:28 **** Incremental Build of configuration Nios II for project interface ****
+make all 
+Info: Building ../interface_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../interface_bsp/
+[BSP build complete]
+[interface build complete]
+15:32:47 **** Build of configuration Nios II for project interface ****
+make all 
+Info: Building ../interface_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../interface_bsp/
+[BSP build complete]
+[interface build complete]
+15:32:49 **** Incremental Build of configuration Nios II for project interface ****
+make all 
+Info: Building ../interface_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../interface_bsp/
+[BSP build complete]
+[interface build complete]
+15:36:40 **** Build of configuration Nios II for project interface ****
+make all 
+Info: Building ../interface_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../interface_bsp/
+[BSP build complete]
+[interface build complete]
+15:36:42 **** Incremental Build of configuration Nios II for project interface ****
+make all 
+Info: Building ../interface_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../interface_bsp/
+[BSP build complete]
+[interface build complete]
+15:40:54 **** Build of configuration Nios II for project interface ****
+make all 
+Info: Building ../interface_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../interface_bsp/
+[BSP build complete]
+[interface build complete]
+15:40:55 **** Incremental Build of configuration Nios II for project interface ****
 make all 
 Info: Building ../interface_bsp/
 C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../interface_bsp/

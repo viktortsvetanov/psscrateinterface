@@ -1,0 +1,79 @@
+Quartus Prime Archive log --	C:/PSS/project/psscrateinterface/psscrate01.qarlog
+
+Archive:	C:/PSS/project/psscrateinterface/psscrate01.qar
+Date:		Sun Mar 08 14:07:38 2020
+Quartus Prime		18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/PSS/project/psscrateinterface/block.bdf
+C:/PSS/project/psscrateinterface/control_write_logic.v
+C:/PSS/project/psscrateinterface/db/stp6_auto_stripped.stp
+C:/PSS/project/psscrateinterface/output_files/stp6.stp
+C:/PSS/project/psscrateinterface/pll.bsf
+C:/PSS/project/psscrateinterface/pll.ppf
+C:/PSS/project/psscrateinterface/pll.qip
+C:/PSS/project/psscrateinterface/pll.v
+C:/PSS/project/psscrateinterface/pll_bb.v
+C:/PSS/project/psscrateinterface/psscrate.qpf
+C:/PSS/project/psscrateinterface/psscrate.qsf
+C:/PSS/project/psscrateinterface/softproc.qsys
+C:/PSS/project/psscrateinterface/softproc.sopcinfo
+C:/PSS/project/psscrateinterface/softproc/softproc.cmp
+C:/PSS/project/psscrateinterface/softproc/synthesis/softproc.debuginfo
+C:/PSS/project/psscrateinterface/softproc/synthesis/softproc.qip
+C:/PSS/project/psscrateinterface/softproc/synthesis/softproc.regmap
+C:/PSS/project/psscrateinterface/softproc/synthesis/softproc.v
+C:/PSS/project/psscrateinterface/softproc/synthesis/submodules/altera_avalon_sc_fifo.v
+C:/PSS/project/psscrateinterface/softproc/synthesis/submodules/altera_merlin_arbitrator.sv
+C:/PSS/project/psscrateinterface/softproc/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+C:/PSS/project/psscrateinterface/softproc/synthesis/submodules/altera_merlin_master_agent.sv
+C:/PSS/project/psscrateinterface/softproc/synthesis/submodules/altera_merlin_master_translator.sv
+C:/PSS/project/psscrateinterface/softproc/synthesis/submodules/altera_merlin_slave_agent.sv
+C:/PSS/project/psscrateinterface/softproc/synthesis/submodules/altera_merlin_slave_translator.sv
+C:/PSS/project/psscrateinterface/softproc/synthesis/submodules/altera_reset_controller.sdc
+C:/PSS/project/psscrateinterface/softproc/synthesis/submodules/altera_reset_controller.v
+C:/PSS/project/psscrateinterface/softproc/synthesis/submodules/altera_reset_synchronizer.v
+C:/PSS/project/psscrateinterface/softproc/synthesis/submodules/altera_up_altpll.v
+C:/PSS/project/psscrateinterface/softproc/synthesis/submodules/altera_up_avalon_reset_from_locked_signal.v
+C:/PSS/project/psscrateinterface/softproc/synthesis/submodules/burst_read_master.v
+C:/PSS/project/psscrateinterface/softproc/synthesis/submodules/burst_write_master.v
+C:/PSS/project/psscrateinterface/softproc/synthesis/submodules/custom_master.v
+C:/PSS/project/psscrateinterface/softproc/synthesis/submodules/latency_aware_read_master.v
+C:/PSS/project/psscrateinterface/softproc/synthesis/submodules/softproc_irq_mapper.sv
+C:/PSS/project/psscrateinterface/softproc/synthesis/submodules/softproc_jtag_uart_0.v
+C:/PSS/project/psscrateinterface/softproc/synthesis/submodules/softproc_mm_interconnect_0.v
+C:/PSS/project/psscrateinterface/softproc/synthesis/submodules/softproc_mm_interconnect_0_avalon_st_adapter.v
+C:/PSS/project/psscrateinterface/softproc/synthesis/submodules/softproc_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv
+C:/PSS/project/psscrateinterface/softproc/synthesis/submodules/softproc_mm_interconnect_0_cmd_demux.sv
+C:/PSS/project/psscrateinterface/softproc/synthesis/submodules/softproc_mm_interconnect_0_cmd_demux_001.sv
+C:/PSS/project/psscrateinterface/softproc/synthesis/submodules/softproc_mm_interconnect_0_cmd_mux.sv
+C:/PSS/project/psscrateinterface/softproc/synthesis/submodules/softproc_mm_interconnect_0_cmd_mux_001.sv
+C:/PSS/project/psscrateinterface/softproc/synthesis/submodules/softproc_mm_interconnect_0_router.sv
+C:/PSS/project/psscrateinterface/softproc/synthesis/submodules/softproc_mm_interconnect_0_router_001.sv
+C:/PSS/project/psscrateinterface/softproc/synthesis/submodules/softproc_mm_interconnect_0_router_003.sv
+C:/PSS/project/psscrateinterface/softproc/synthesis/submodules/softproc_mm_interconnect_0_router_004.sv
+C:/PSS/project/psscrateinterface/softproc/synthesis/submodules/softproc_mm_interconnect_0_rsp_demux.sv
+C:/PSS/project/psscrateinterface/softproc/synthesis/submodules/softproc_mm_interconnect_0_rsp_demux_001.sv
+C:/PSS/project/psscrateinterface/softproc/synthesis/submodules/softproc_mm_interconnect_0_rsp_mux.sv
+C:/PSS/project/psscrateinterface/softproc/synthesis/submodules/softproc_mm_interconnect_0_rsp_mux_001.sv
+C:/PSS/project/psscrateinterface/softproc/synthesis/submodules/softproc_new_sdram_controller_0.v
+C:/PSS/project/psscrateinterface/softproc/synthesis/submodules/softproc_nios2_gen2_0.v
+C:/PSS/project/psscrateinterface/softproc/synthesis/submodules/softproc_nios2_gen2_0_cpu.sdc
+C:/PSS/project/psscrateinterface/softproc/synthesis/submodules/softproc_nios2_gen2_0_cpu.v
+C:/PSS/project/psscrateinterface/softproc/synthesis/submodules/softproc_nios2_gen2_0_cpu_debug_slave_sysclk.v
+C:/PSS/project/psscrateinterface/softproc/synthesis/submodules/softproc_nios2_gen2_0_cpu_debug_slave_tck.v
+C:/PSS/project/psscrateinterface/softproc/synthesis/submodules/softproc_nios2_gen2_0_cpu_debug_slave_wrapper.v
+C:/PSS/project/psscrateinterface/softproc/synthesis/submodules/softproc_nios2_gen2_0_cpu_ociram_default_contents.mif
+C:/PSS/project/psscrateinterface/softproc/synthesis/submodules/softproc_nios2_gen2_0_cpu_rf_ram_a.mif
+C:/PSS/project/psscrateinterface/softproc/synthesis/submodules/softproc_nios2_gen2_0_cpu_rf_ram_b.mif
+C:/PSS/project/psscrateinterface/softproc/synthesis/submodules/softproc_nios2_gen2_0_cpu_test_bench.v
+C:/PSS/project/psscrateinterface/softproc/synthesis/submodules/softproc_onchip_memory2_0.hex
+C:/PSS/project/psscrateinterface/softproc/synthesis/submodules/softproc_onchip_memory2_0.v
+C:/PSS/project/psscrateinterface/softproc/synthesis/submodules/softproc_pio_0.v
+C:/PSS/project/psscrateinterface/softproc/synthesis/submodules/softproc_sys_sdram_pll_0.v
+C:/PSS/project/psscrateinterface/softproc/synthesis/submodules/write_master.v
+c:/intelfpga_lite/18.1/quartus/bin64/assignment_defaults.qdf
+	======= Total: 68 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

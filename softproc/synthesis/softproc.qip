@@ -2,7 +2,7 @@ set_global_assignment -entity "softproc" -library "softproc" -name IP_TOOL_NAME 
 set_global_assignment -entity "softproc" -library "softproc" -name IP_TOOL_VERSION "18.1"
 set_global_assignment -entity "softproc" -library "softproc" -name IP_TOOL_ENV "Qsys"
 set_global_assignment -library "softproc" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../softproc.sopcinfo"]
-set_global_assignment -entity "softproc" -library "softproc" -name SLD_INFO "QSYS_NAME softproc HAS_SOPCINFO 1 GENERATION_ID 1582650123"
+set_global_assignment -entity "softproc" -library "softproc" -name SLD_INFO "QSYS_NAME softproc HAS_SOPCINFO 1 GENERATION_ID 1582797597"
 set_global_assignment -library "softproc" -name MISC_FILE [file join $::quartus(qip_path) "../softproc.cmp"]
 set_global_assignment -library "softproc" -name SLD_FILE [file join $::quartus(qip_path) "softproc.regmap"]
 set_global_assignment -library "softproc" -name SLD_FILE [file join $::quartus(qip_path) "softproc.debuginfo"]
@@ -16,7 +16,7 @@ set_global_assignment -entity "softproc" -library "softproc" -name IP_COMPONENT_
 set_global_assignment -entity "softproc" -library "softproc" -name IP_COMPONENT_REPORT_HIERARCHY "On"
 set_global_assignment -entity "softproc" -library "softproc" -name IP_COMPONENT_INTERNAL "Off"
 set_global_assignment -entity "softproc" -library "softproc" -name IP_COMPONENT_VERSION "MS4w"
-set_global_assignment -entity "softproc" -library "softproc" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTU4MjY1MDEyMw==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "softproc" -library "softproc" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTU4Mjc5NzU5Nw==::QXV0byBHRU5FUkFUSU9OX0lE"
 set_global_assignment -entity "softproc" -library "softproc" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::Q3ljbG9uZSBJViBF::QXV0byBERVZJQ0VfRkFNSUxZ"
 set_global_assignment -entity "softproc" -library "softproc" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::RVA0Q0UxMTVGMjlDNw==::QXV0byBERVZJQ0U="
 set_global_assignment -entity "softproc" -library "softproc" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfU1BFRURHUkFERQ==::Nw==::QXV0byBERVZJQ0VfU1BFRURHUkFERQ=="

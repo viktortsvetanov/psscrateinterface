@@ -1,16 +1,16 @@
-Fitter Status : Successful - Wed Feb 26 13:12:32 2020
+Fitter Status : Successful - Mon Mar 09 15:39:58 2020
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : psscrate
 Top-level Entity Name : block
 Family : Cyclone IV E
 Device : EP4CE115F29C7
 Timing Models : Final
-Total logic elements : 3,471 / 114,480 ( 3 % )
-    Total combinational functions : 2,785 / 114,480 ( 2 % )
-    Dedicated logic registers : 2,220 / 114,480 ( 2 % )
-Total registers : 2339
+Total logic elements : 3,514 / 114,480 ( 3 % )
+    Total combinational functions : 2,817 / 114,480 ( 2 % )
+    Dedicated logic registers : 2,265 / 114,480 ( 2 % )
+Total registers : 2384
 Total pins : 76 / 529 ( 14 % )
 Total virtual pins : 0
-Total memory bits : 149,376 / 3,981,312 ( 4 % )
+Total memory bits : 149,760 / 3,981,312 ( 4 % )
 Embedded Multiplier 9-bit elements : 0 / 532 ( 0 % )
 Total PLLs : 1 / 4 ( 25 % )
