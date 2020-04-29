@@ -63,14 +63,14 @@ end
 						control_go <= 1'b0; //
 						if(count==temp && !user_buffer_full) // start transfer condition
 							begin
-									user_buffer_input <= ~address[4:0]; // module value
+									user_buffer_input <= {27'd0,~address}; // module value
 									user_write_buffer <= 1'b1; //write qualifier
 									control_go <= 1'b1; //get things started
 									count <= temp+1;
 							end
 						if(count==(temp+1) && !user_buffer_full)
 							begin
-									user_buffer_input <= port[1:0]; // port value
+									user_buffer_input <= {30'd0,~port}; // port value
 									count <= temp+2;
 							end
 						if(count==(temp+2) && !user_buffer_full)
@@ -88,5 +88,3 @@ end
 end
 
 endmodule
-
-

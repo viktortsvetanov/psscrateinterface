@@ -1,5 +1,5 @@
 Flow report for psscrate
-Mon Mar 09 15:40:27 2020
+Thu Apr 02 14:25:27 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,20 +40,20 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Mon Mar 09 15:40:27 2020       ;
+; Flow Status                        ; Successful - Thu Apr 02 14:25:27 2020       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; psscrate                                    ;
 ; Top-level Entity Name              ; block                                       ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 3,514 / 114,480 ( 3 % )                     ;
-;     Total combinational functions  ; 2,817 / 114,480 ( 2 % )                     ;
-;     Dedicated logic registers      ; 2,265 / 114,480 ( 2 % )                     ;
-; Total registers                    ; 2384                                        ;
-; Total pins                         ; 76 / 529 ( 14 % )                           ;
+; Total logic elements               ; 5,156 / 114,480 ( 5 % )                     ;
+;     Total combinational functions  ; 4,442 / 114,480 ( 4 % )                     ;
+;     Dedicated logic registers      ; 2,311 / 114,480 ( 2 % )                     ;
+; Total registers                    ; 2430                                        ;
+; Total pins                         ; 81 / 529 ( 15 % )                           ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 149,760 / 3,981,312 ( 4 % )                 ;
+; Total memory bits                  ; 150,080 / 3,981,312 ( 4 % )                 ;
 ; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                             ;
 ; Total PLLs                         ; 1 / 4 ( 25 % )                              ;
 +------------------------------------+---------------------------------------------+
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/09/2020 15:38:33 ;
+; Start date & time ; 04/02/2020 14:23:11 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; psscrate            ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------+-------------+------------------+
 ; Assignment Name                     ; Value                                                                                                                                                                                          ; Default Value ; Entity Name ; Section Id       ;
 +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------+-------------+------------------+
-; COMPILER_SIGNATURE_ID               ; 48751581671556.158376831225284                                                                                                                                                                 ; --            ; --          ; --               ;
+; COMPILER_SIGNATURE_ID               ; 48751581671556.158583379105768                                                                                                                                                                 ; --            ; --          ; --               ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                                                                                                                                                                                    ; --            ; --          ; eda_simulation   ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)                                                                                                                                                                      ; <None>        ; --          ; --               ;
 ; EDA_TIME_SCALE                      ; 1 ps                                                                                                                                                                                           ; --            ; --          ; eda_simulation   ;
@@ -84,9 +84,6 @@ refer to the applicable agreement for further details.
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                                                                                                                                                                              ; --            ; --          ; --               ;
 ; MISC_FILE                           ; softproc/synthesis/../softproc.cmp                                                                                                                                                             ; --            ; --          ; --               ;
 ; MISC_FILE                           ; softproc/synthesis/../../softproc.qsys                                                                                                                                                         ; --            ; --          ; --               ;
-; MISC_FILE                           ; pll.bsf                                                                                                                                                                                        ; --            ; --          ; --               ;
-; MISC_FILE                           ; pll_bb.v                                                                                                                                                                                       ; --            ; --          ; --               ;
-; MISC_FILE                           ; pll.ppf                                                                                                                                                                                        ; --            ; --          ; --               ;
 ; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                                                                                                                                                                           ; --            ; --          ; --               ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family)                                                                                                                                                         ; --            ; block       ; Top              ;
 ; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family)                                                                                                                                                         ; --            ; block       ; Top              ;
@@ -97,7 +94,7 @@ refer to the applicable agreement for further details.
 ; SLD_FILE                            ; softproc/synthesis/softproc.regmap                                                                                                                                                             ; --            ; --          ; --               ;
 ; SLD_FILE                            ; softproc/synthesis/softproc.debuginfo                                                                                                                                                          ; --            ; --          ; --               ;
 ; SLD_FILE                            ; db/stp6_auto_stripped.stp                                                                                                                                                                      ; --            ; --          ; --               ;
-; SLD_INFO                            ; QSYS_NAME softproc HAS_SOPCINFO 1 GENERATION_ID 1582797597                                                                                                                                     ; --            ; softproc    ; --               ;
+; SLD_INFO                            ; QSYS_NAME softproc HAS_SOPCINFO 1 GENERATION_ID 1585830305                                                                                                                                     ; --            ; softproc    ; --               ;
 ; SLD_NODE_CREATOR_ID                 ; 110                                                                                                                                                                                            ; --            ; --          ; auto_signaltap_0 ;
 ; SLD_NODE_ENTITY_NAME                ; sld_signaltap                                                                                                                                                                                  ; --            ; --          ; auto_signaltap_0 ;
 ; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_RAM_BLOCK_TYPE=AUTO                                                                                                                                                                        ; --            ; --          ; auto_signaltap_0 ;
@@ -137,12 +134,12 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:53     ; 1.0                     ; 4945 MB             ; 00:01:22                           ;
-; Fitter               ; 00:00:27     ; 1.0                     ; 5759 MB             ; 00:00:39                           ;
-; Assembler            ; 00:00:05     ; 1.0                     ; 4706 MB             ; 00:00:05                           ;
-; Timing Analyzer      ; 00:00:05     ; 1.2                     ; 4892 MB             ; 00:00:06                           ;
-; EDA Netlist Writer   ; 00:00:13     ; 1.0                     ; 4717 MB             ; 00:00:08                           ;
-; Total                ; 00:01:43     ; --                      ; --                  ; 00:02:20                           ;
+; Analysis & Synthesis ; 00:01:14     ; 1.0                     ; 4977 MB             ; 00:01:42                           ;
+; Fitter               ; 00:00:28     ; 1.1                     ; 5779 MB             ; 00:00:40                           ;
+; Assembler            ; 00:00:05     ; 1.0                     ; 4713 MB             ; 00:00:05                           ;
+; Timing Analyzer      ; 00:00:06     ; 1.2                     ; 4902 MB             ; 00:00:06                           ;
+; EDA Netlist Writer   ; 00:00:12     ; 1.0                     ; 4735 MB             ; 00:00:08                           ;
+; Total                ; 00:02:05     ; --                      ; --                  ; 00:02:41                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

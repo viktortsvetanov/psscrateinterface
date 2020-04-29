@@ -71,9 +71,9 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY
  26 .quartus_project_dir 00000020  00000000  00000000  0006b604  2**0
                   CONTENTS, READONLY
- 27 .jdi          000062bd  00000000  00000000  0006b624  2**0
+ 27 .jdi          000062c6  00000000  00000000  0006b624  2**0
                   CONTENTS, READONLY
- 28 .sopcinfo     00044e8d  00000000  00000000  000718e1  2**0
+ 28 .sopcinfo     00044e8d  00000000  00000000  000718ea  2**0
                   CONTENTS, READONLY
 SYMBOL TABLE:
 08000000 l    d  .entry	00000000 .entry
@@ -924,11 +924,11 @@ int main ()
  8000270:	dfc00115 	stw	ra,4(sp)
  8000274:	df000015 	stw	fp,0(sp)
  8000278:	d839883a 	mov	fp,sp
-printf("Tggg"); //T is the identifier
+printf("Tttt"); //T is the identifier
  800027c:	01020074 	movhi	r4,2049
  8000280:	213e6c04 	addi	r4,r4,-1616
  8000284:	80003880 	call	8000388 <printf>
-while (1)
+while (1) // never end loop
 {
 if (IORD_ALTERA_AVALON_PIO_EDGE_CAP(PIO_0_BASE) == 1)
  8000288:	00800304 	movi	r2,12
@@ -936,18 +936,18 @@ if (IORD_ALTERA_AVALON_PIO_EDGE_CAP(PIO_0_BASE) == 1)
  8000290:	10800058 	cmpnei	r2,r2,1
  8000294:	103ffc1e 	bne	r2,zero,8000288 <__alt_mem_onchip_memory2_0+0xf7ffc288>
 {
-IOWR_ALTERA_AVALON_PIO_EDGE_CAP(PIO_0_BASE, 0x1);
+IOWR_ALTERA_AVALON_PIO_EDGE_CAP(PIO_0_BASE, 0x1); // set pio edge true
  8000298:	00c00044 	movi	r3,1
  800029c:	00800304 	movi	r2,12
  80002a0:	10c00035 	stwio	r3,0(r2)
-alt_busy_sleep(10000);
+alt_busy_sleep(10000); // processor delay
  80002a4:	0109c404 	movi	r4,10000
  80002a8:	800d1c40 	call	800d1c4 <alt_busy_sleep>
-printf("Module="); //T is the identifier
+printf("Module="); //identifier
  80002ac:	01020074 	movhi	r4,2049
  80002b0:	213e6e04 	addi	r4,r4,-1608
  80002b4:	80003880 	call	8000388 <printf>
-printf("%d",IORD(ONCHIP_MEMORY2_0_BASE, 0)); // IORD_32DIRECT(ONCHIP_MEMORY2_0_BASE, 0));
+printf("%d",IORD(ONCHIP_MEMORY2_0_BASE, 0)); // Read first word
  80002b8:	00840034 	movhi	r2,4096
  80002bc:	10900004 	addi	r2,r2,16384
  80002c0:	10800037 	ldwio	r2,0(r2)
@@ -955,14 +955,14 @@ printf("%d",IORD(ONCHIP_MEMORY2_0_BASE, 0)); // IORD_32DIRECT(ONCHIP_MEMORY2_0_B
  80002c8:	01020074 	movhi	r4,2049
  80002cc:	213e7004 	addi	r4,r4,-1600
  80002d0:	80003880 	call	8000388 <printf>
-alt_busy_sleep(10000);
+alt_busy_sleep(10000); // processor delay
  80002d4:	0109c404 	movi	r4,10000
  80002d8:	800d1c40 	call	800d1c4 <alt_busy_sleep>
-printf("\r Port="); //T is the identifier
+printf("\r Port="); //identifier
  80002dc:	01020074 	movhi	r4,2049
  80002e0:	213e7104 	addi	r4,r4,-1596
  80002e4:	80003880 	call	8000388 <printf>
-printf("%d",IORD(ONCHIP_MEMORY2_0_BASE, 1)); // IORD(ONCHIP_MEMORY2_0_BASE, 1));
+printf("%d",IORD(ONCHIP_MEMORY2_0_BASE, 1)); // Read second word
  80002e8:	00840034 	movhi	r2,4096
  80002ec:	10900104 	addi	r2,r2,16388
  80002f0:	10800037 	ldwio	r2,0(r2)
@@ -970,14 +970,14 @@ printf("%d",IORD(ONCHIP_MEMORY2_0_BASE, 1)); // IORD(ONCHIP_MEMORY2_0_BASE, 1));
  80002f8:	01020074 	movhi	r4,2049
  80002fc:	213e7004 	addi	r4,r4,-1600
  8000300:	80003880 	call	8000388 <printf>
-alt_busy_sleep(10000);
+alt_busy_sleep(10000); // processor delay
  8000304:	0109c404 	movi	r4,10000
  8000308:	800d1c40 	call	800d1c4 <alt_busy_sleep>
-printf("\r Data="); //T is the identifier
+printf("\r Data="); //identifier
  800030c:	01020074 	movhi	r4,2049
  8000310:	213e7304 	addi	r4,r4,-1588
  8000314:	80003880 	call	8000388 <printf>
-printf("%X",IORD(ONCHIP_MEMORY2_0_BASE, 2)); // IORD(ONCHIP_MEMORY2_0_BASE, 2));
+printf("%X",IORD(ONCHIP_MEMORY2_0_BASE, 2)); // Read third word
  8000318:	00840034 	movhi	r2,4096
  800031c:	10900204 	addi	r2,r2,16392
  8000320:	10800037 	ldwio	r2,0(r2)
@@ -985,14 +985,14 @@ printf("%X",IORD(ONCHIP_MEMORY2_0_BASE, 2)); // IORD(ONCHIP_MEMORY2_0_BASE, 2));
  8000328:	01020074 	movhi	r4,2049
  800032c:	213e7504 	addi	r4,r4,-1580
  8000330:	80003880 	call	8000388 <printf>
-printf("\n\r"); //T is the identifier
+printf("\n\r"); //new line
  8000334:	01020074 	movhi	r4,2049
  8000338:	213e7604 	addi	r4,r4,-1576
  800033c:	80003880 	call	8000388 <printf>
-alt_busy_sleep(1000);
+alt_busy_sleep(1000); // processor delay
  8000340:	0100fa04 	movi	r4,1000
  8000344:	800d1c40 	call	800d1c4 <alt_busy_sleep>
-alt_busy_sleep(300000);
+alt_busy_sleep(300000); // processor delay
  8000348:	01000174 	movhi	r4,5
  800034c:	2124f804 	addi	r4,r4,-27680
  8000350:	800d1c40 	call	800d1c4 <alt_busy_sleep>
@@ -1220,7 +1220,7 @@ alt_busy_sleep(300000);
  80006a8:	08001184 	addi	zero,at,70
  80006ac:	08001008 	cmpgei	zero,at,64
  80006b0:	080006f0 	cmpltui	zero,at,27
- 80006b4:	08001040 	call	800104 <__alt_mem_new_sdram_controller_0-0x77ffefc>
+ 80006b4:	08001040 	call	800104 <__reset-0x77ffefc>
  80006b8:	08001220 	cmpeqi	zero,at,72
  80006bc:	0800104c 	andi	zero,at,65
  80006c0:	08001220 	cmpeqi	zero,at,72
@@ -8320,12 +8320,12 @@ alt_busy_sleep(300000);
  8007368:	08007c28 	cmpgeui	zero,at,496
  800736c:	08007c28 	cmpgeui	zero,at,496
  8007370:	08007850 	cmplti	zero,at,481
- 8007374:	08007880 	call	800788 <__alt_mem_new_sdram_controller_0-0x77ff878>
+ 8007374:	08007880 	call	800788 <__reset-0x77ff878>
  8007378:	08007c28 	cmpgeui	zero,at,496
  800737c:	08007c28 	cmpgeui	zero,at,496
  8007380:	08007c28 	cmpgeui	zero,at,496
  8007384:	08007bd0 	cmplti	zero,at,495
- 8007388:	08007880 	call	800788 <__alt_mem_new_sdram_controller_0-0x77ff878>
+ 8007388:	08007880 	call	800788 <__reset-0x77ff878>
  800738c:	08007c28 	cmpgeui	zero,at,496
  8007390:	08007c28 	cmpgeui	zero,at,496
  8007394:	08007728 	cmpgeui	zero,at,476
@@ -12435,7 +12435,7 @@ alt_busy_sleep(300000);
  800b2b4:	308d883a 	add	r6,r6,r2
  800b2b8:	30800017 	ldw	r2,0(r6)
  800b2bc:	1000683a 	jmp	r2
- 800b2c0:	0800b500 	call	800b50 <__alt_mem_new_sdram_controller_0-0x77ff4b0>
+ 800b2c0:	0800b500 	call	800b50 <__reset-0x77ff4b0>
  800b2c4:	0800b338 	rdprs	zero,at,716
  800b2c8:	0800b4f0 	cmpltui	zero,at,723
  800b2cc:	0800b32c 	andhi	zero,at,716
@@ -13227,10 +13227,10 @@ alt_busy_sleep(300000);
  800bef4:	0800bf44 	addi	zero,at,765
  800bef8:	0800c118 	cmpnei	zero,at,772
  800befc:	0800c118 	cmpnei	zero,at,772
- 800bf00:	0800c100 	call	800c10 <__alt_mem_new_sdram_controller_0-0x77ff3f0>
+ 800bf00:	0800c100 	call	800c10 <__reset-0x77ff3f0>
  800bf04:	0800bf44 	addi	zero,at,765
  800bf08:	0800c118 	cmpnei	zero,at,772
- 800bf0c:	0800c100 	call	800c10 <__alt_mem_new_sdram_controller_0-0x77ff3f0>
+ 800bf0c:	0800c100 	call	800c10 <__reset-0x77ff3f0>
  800bf10:	0800c118 	cmpnei	zero,at,772
  800bf14:	0800bf44 	addi	zero,at,765
  800bf18:	0800c128 	cmpgeui	zero,at,772
@@ -18749,13 +18749,13 @@ alt_exception_cause_generated_bad_addr(alt_exception_cause cause)
  800f5c4:	0800f608 	cmpgei	zero,at,984
  800f5c8:	0800f608 	cmpgei	zero,at,984
  800f5cc:	0800f5f8 	rdprs	zero,at,983
- 800f5d0:	0800f600 	call	800f60 <__alt_mem_new_sdram_controller_0-0x77ff0a0>
+ 800f5d0:	0800f600 	call	800f60 <__reset-0x77ff0a0>
  800f5d4:	0800f608 	cmpgei	zero,at,984
  800f5d8:	0800f5f8 	rdprs	zero,at,983
  800f5dc:	0800f5f8 	rdprs	zero,at,983
  800f5e0:	0800f608 	cmpgei	zero,at,984
  800f5e4:	0800f5f8 	rdprs	zero,at,983
- 800f5e8:	0800f600 	call	800f60 <__alt_mem_new_sdram_controller_0-0x77ff0a0>
+ 800f5e8:	0800f600 	call	800f60 <__reset-0x77ff0a0>
  800f5ec:	0800f608 	cmpgei	zero,at,984
  800f5f0:	0800f608 	cmpgei	zero,at,984
  800f5f4:	0800f5f8 	rdprs	zero,at,983
@@ -18875,7 +18875,7 @@ alt_exception_cause_generated_bad_addr(alt_exception_cause cause)
  800f760:	d9400015 	stw	r5,0(sp)
  800f764:	d9800115 	stw	r6,4(sp)
  800f768:	d9c00215 	stw	r7,8(sp)
- 800f76c:	00000000 	call	0 <__alt_mem_new_sdram_controller_0-0x8000000>
+ 800f76c:	00000000 	call	0 <__reset-0x8000000>
  800f770:	d9400017 	ldw	r5,0(sp)
  800f774:	d9800117 	ldw	r6,4(sp)
  800f778:	d9c00217 	ldw	r7,8(sp)
@@ -18959,7 +18959,7 @@ alt_exception_cause_generated_bad_addr(alt_exception_cause cause)
  800f8a8:	10003226 	beq	r2,zero,800f974 <__call_exitprocs+0x178>
  800f8ac:	a009883a 	mov	r4,r20
  800f8b0:	98800015 	stw	r2,0(r19)
- 800f8b4:	00000000 	call	0 <__alt_mem_new_sdram_controller_0-0x8000000>
+ 800f8b4:	00000000 	call	0 <__reset-0x8000000>
  800f8b8:	9d000017 	ldw	r20,0(r19)
  800f8bc:	a03fe41e 	bne	r20,zero,800f850 <__alt_mem_onchip_memory2_0+0xf800b850>
  800f8c0:	dfc00a17 	ldw	ra,40(sp)

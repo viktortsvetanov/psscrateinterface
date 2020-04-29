@@ -1,0 +1,61 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "io.h"
+#include <unistd.h>
+#include "system.h"
+#include "alt_types.h"
+//#include "altera_avalon_pio_regs.h"
+//#include <io.h>
+
+#define ONCHIP_MEMORY2_0_BASE 0x10004000
+
+
+
+int main()
+{
+	usleep(15000);
+	// Input buffer:
+	char prompt;
+	/* Event loop never exits. */
+	while (1){
+	// display prompt:
+	printf("\n Y - write 3, N - write 1, R - write 0, o - read \n");
+	printf("\n Enter Command: \n");
+	prompt=getchar();
+	if (prompt == 'Y')
+	{
+		  IOWR(0x10004000,1,0x3);
+		  usleep(4150);
+	}
+	else if (prompt == 'N')
+	{
+		  IOWR(0x10004000,1,0x1);
+		  usleep(4150);
+	}
+	else if (prompt == 'F')
+	{
+		  IOWR_32DIRECT(0x10004000,3,0x9);
+		  usleep(4150);
+	}
+	else if (prompt == 'R')
+	{
+		  IOWR(0x10004000,1,0x0);
+		  usleep(4150);
+	}
+	else if (prompt == 'o')
+	{
+		printf("\n Read:");
+		printf("%d",IORD(0x10004000, 1));
+		  usleep(4150);
+	}
+	else if (prompt == 'p')
+	{
+		printf("\n Read:");
+		printf("%d",IORD_32DIRECT(0x10004000, 3));
+		  usleep(4150);
+	}
+	usleep(15000);
+	}
+	return 0; //never reach here.
+}

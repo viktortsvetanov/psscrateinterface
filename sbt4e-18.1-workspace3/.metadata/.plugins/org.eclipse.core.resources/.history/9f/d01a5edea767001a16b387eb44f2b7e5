@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "io.h"
+#include <unistd.h>
+#include "system.h"
+#include "alt_types.h"
+#include "altera_avalon_pio_regs.h"
+//#include <io.h>
+
+#define ONCHIP_MEMORY2_0_BASE 0x10004000
+#define PIO_0_BASE 0x10009010
+
+
+int main()
+{
+	// Input buffer:
+	char * buffer;
+	char prompt;
+	/* Event loop never exits. */
+	while (1){
+	// display prompt:
+		if (IORD_ALTERA_AVALON_PIO_EDGE_CAP(0x10009010) == 1)
+		{
+			IOWR_ALTERA_AVALON_PIO_EDGE_CAP(0x10009010, 0x1);
+	printf("\n Enter Command: \n");
+	prompt=getchar();
+	if (prompt == 'Y')
+	{
+		  IOWR(0x10004000,1,0x3);
+	}
+	else if (prompt == 'N')
+	{
+		  IOWR(0x10004000,1,0x1);
+	}
+	else if (prompt == 'F')
+	{
+		  IOWR(0x10004000,1,0x0);
+	}
+		}
+	}
+	return 0; //never reach here.
+}

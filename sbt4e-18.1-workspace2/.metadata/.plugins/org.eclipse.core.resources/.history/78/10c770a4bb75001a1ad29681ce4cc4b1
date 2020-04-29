@@ -1,0 +1,237 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "io.h"
+#include <unistd.h>
+#include "system.h"
+#include "alt_types.h"
+#include "altera_avalon_pio_regs.h"
+#include <io.h>
+
+#define ONCHIP_MEMORY2_0_BASE 0x10004000
+
+int main()
+{
+
+	printf("Commands:\n Y \t Enable \n N \t Disable \n");
+	// Input buffer:
+	char * buffer;
+	char prompt;
+
+	int bytes_read;
+	int size_read = 16;
+	char *string;
+
+
+	while (1){
+
+	// display prompt:
+	printf("\n Enter Command: \n");
+
+	string = (char *) malloc (size_read);
+	bytes_read = getline (&string, &size_read, stdin);
+
+	if (bytes_read == -1)
+
+	{
+
+	puts ("ERROR!");
+
+	}
+
+	else
+
+	{
+
+	puts ("You entered the following string: ");
+
+	puts (string);
+
+		if (string == 'ReadRelays(1)')
+		{
+			printf("\n Relays:");
+			printf("%X",IORD_32DIRECT(0x10004000, 4)); //prints port 0 relays
+			printf("%X",IORD_32DIRECT(0x10004000, 12)); //prints port 1 relays
+		}
+		else if (string == 'ReadRelays(2)')
+		{
+			printf("\n Relays:");
+			printf("%X",IORD_32DIRECT(0x10004020, 4)); //prints port 0 relays
+			printf("%X",IORD_32DIRECT(0x10004020, 12)); //prints port 1 relays
+		}
+		else if (string == 'ReadRelays(3)')
+		{
+			printf("\n Relays:");
+			printf("%X",IORD_32DIRECT(0x10004040, 4)); //prints port 0 relays
+			printf("%X",IORD_32DIRECT(0x10004040, 12)); //prints port 1 relays
+		}
+		else if (string == 'ReadRelays(4)')
+		{
+			printf("\n Relays:");
+			printf("%X",IORD_32DIRECT(0x10004060, 4)); //prints port 0 relays
+			printf("%X",IORD_32DIRECT(0x10004060, 12)); //prints port 1 relays
+		}
+		else if (string == 'ReadRelays(5)')
+		{
+			printf("\n Relays:");
+			printf("%X",IORD_32DIRECT(0x10004080, 4)); //prints port 0 relays
+			printf("%X",IORD_32DIRECT(0x10004080, 12)); //prints port 1 relays
+		}
+		else if (string == 'ReadRelays(6)')
+		{
+			printf("\n Relays:");
+			printf("%X",IORD_32DIRECT(0x10004100, 4)); //prints port 0 relays
+			printf("%X",IORD_32DIRECT(0x10004100, 12)); //prints port 1 relays
+		}
+		else if (string == 'ReadRelays(7)')
+		{
+			printf("\n Relays:");
+			printf("%X",IORD_32DIRECT(0x10004120, 4)); //prints port 0 relays
+			printf("%X",IORD_32DIRECT(0x10004120, 12)); //prints port 1 relays
+		}
+		else if (string == 'ReadRelays(8)')
+		{
+			printf("\n Relays:");
+			printf("%X",IORD_32DIRECT(0x10004140, 4)); //prints port 0 relays
+			printf("%X",IORD_32DIRECT(0x10004140, 12)); //prints port 1 relays
+		}
+		else if (string == 'ReadRelays(9)')
+		{
+			printf("\n Relays:");
+			printf("%X",IORD_32DIRECT(0x10004160, 4)); //prints port 0 relays
+			printf("%X",IORD_32DIRECT(0x10004160, 12)); //prints port 1 relays
+		}
+		else if (string == 'ReadRelays(10)')
+		{
+			printf("\n Relays:");
+			printf("%X",IORD_32DIRECT(0x10004180, 4)); //prints port 0 relays
+			printf("%X",IORD_32DIRECT(0x10004180, 12)); //prints port 1 relays
+		}
+		else if (string == 'ReadRelays(11)')
+		{
+			printf("\n Relays:");
+			printf("%X",IORD_32DIRECT(0x10004200, 4)); //prints port 0 relays
+			printf("%X",IORD_32DIRECT(0x10004200, 12)); //prints port 1 relays
+		}
+		else if (string == 'ReadRelays(12)')
+		{
+			printf("\n Relays:");
+			printf("%X",IORD_32DIRECT(0x10004220, 4)); //prints port 0 relays
+			printf("%X",IORD_32DIRECT(0x10004220, 12)); //prints port 1 relays
+		}
+		else if (string == 'ReadRelays(13)')
+		{
+			printf("\n Relays:");
+			printf("%X",IORD_32DIRECT(0x10004240, 4)); //prints port 0 relays
+			printf("%X",IORD_32DIRECT(0x10004240, 12)); //prints port 1 relays
+		}
+		else if (string == 'ReadRelays(14)')
+		{
+			printf("\n Relays:");
+			printf("%X",IORD_32DIRECT(0x10004260, 4)); //prints port 0 relays
+			printf("%X",IORD_32DIRECT(0x10004260, 12)); //prints port 1 relays
+		}
+		else if (string == 'ReadRelays(16)')
+		{
+			printf("\n Relays:");
+			printf("%X",IORD_32DIRECT(0x10004280, 4)); //prints port 0 relays
+			printf("%X",IORD_32DIRECT(0x10004280, 12)); //prints port 1 relays
+		}
+		else if (string == 'ReadRelays(17)')
+		{
+			printf("\n Relays:");
+			printf("%X",IORD_32DIRECT(0x10004300, 4)); //prints port 0 relays
+			printf("%X",IORD_32DIRECT(0x10004300, 12)); //prints port 1 relays
+		}
+		else if (string == 'ReadRelays(18)')
+		{
+			printf("\n Relays:");
+			printf("%X",IORD_32DIRECT(0x10004320, 4)); //prints port 0 relays
+			printf("%X",IORD_32DIRECT(0x10004320, 12)); //prints port 1 relays
+		}
+		else if (string == 'ReadRelays(19)')
+		{
+			printf("\n Relays:");
+			printf("%X",IORD_32DIRECT(0x10004340, 4)); //prints port 0 relays
+			printf("%X",IORD_32DIRECT(0x10004340, 12)); //prints port 1 relays
+		}
+		else if (string == 'ReadRelays(20)')
+		{
+			printf("\n Relays:");
+			printf("%X",IORD_32DIRECT(0x10004360, 4)); //prints port 0 relays
+			printf("%X",IORD_32DIRECT(0x10004360, 12)); //prints port 1 relays
+		}
+		else if (string == 'ReadRelays(21)')
+		{
+			printf("\n Relays:");
+			printf("%X",IORD_32DIRECT(0x10004380, 4)); //prints port 0 relays
+			printf("%X",IORD_32DIRECT(0x10004380, 12)); //prints port 1 relays
+		}
+		else if (string == 'ReadRelays(22)')
+		{
+			printf("\n Relays:");
+			printf("%X",IORD_32DIRECT(0x10004400, 4)); //prints port 0 relays
+			printf("%X",IORD_32DIRECT(0x10004400, 12)); //prints port 1 relays
+		}
+		else if (string == 'Write(1,0)')
+		{
+			IOWR_32DIRECT(0x1004010,0,0b11011110); // sets Module 1 Port 2
+			IOWR_8DIRECT(0x10004010,5,0x0); // writes 0 to upper 4 bits of Port 2
+			printf("\n Module 1 turned off");
+		}
+		else if (string == 'Write(1,3)')
+		{
+			IOWR_32DIRECT(0x1004010,0,0b11011110); // sets Module 1 Port 2
+			IOWR_8DIRECT(0x10004010,5,0x3); // writes 11 to upper 4 bits of Port 2
+			printf("\n Module 1 turned on");
+		}
+		else if (string == 'Write(2,0)')
+		{
+			IOWR_32DIRECT(0x1004030,0,0b11011101); // sets Module 2 Port 2
+			IOWR_8DIRECT(0x10004030,5,0x0); // writes 0 to upper 4 bits of Port 2
+			printf("\n Module 2 turned off");
+		}
+		else if (string == 'Write(2,3)')
+		{
+			IOWR_32DIRECT(0x1004030,0,0b11011101); // sets Module 2 Port 2
+			IOWR_8DIRECT(0x10004030,5,0x3); // writes 11 to upper 4 bits of Port 2
+			printf("\n Module 2 turned on");
+		}
+		else if (string == 'Write(3,0)')
+		{
+			IOWR_32DIRECT(0x1004050,0,0b11011100); // sets Module 3 Port 2
+			IOWR_8DIRECT(0x10004050,5,0x0); // writes 0 to upper 4 bits of Port 2
+			printf("\n Module 3 turned off");
+		}
+		else if (string == 'Write(3,3)')
+		{
+			IOWR_32DIRECT(0x1004050,0,0b11011100); // sets Module 3 Port 2
+			IOWR_8DIRECT(0x10004050,5,0x3); // writes 11 to upper 4 bits of Port 2
+			printf("\n Module 3 turned on");
+		}
+		else if (string == 'Write(4,0)')
+		{
+			IOWR_32DIRECT(0x1004070,0,0b11011011); // sets Module 4 Port 2
+			IOWR_8DIRECT(0x10004070,5,0x0); // writes 0 to upper 4 bits of Port 2
+			printf("\n Module 4 turned off");
+		}
+		else if (string == 'Write(4,3)')
+		{
+			IOWR_32DIRECT(0x1004070,0,0b11011011); // sets Module 4 Port 2
+			IOWR_8DIRECT(0x10004070,5,0x3); // writes 11 to upper 4 bits of Port 2
+			printf("\n Module 4 turned on");
+		}
+
+
+
+		else
+		{
+			printf("\n Command not supported. Please try again.");
+		}
+	}
+
+
+	}
+
+	return 0; //never reach here.
+}

@@ -1,0 +1,204 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+*/
+(header "symbol" (version "1.2"))
+(symbol
+	(rect 64 64 448 368)
+	(text "control_logic" (rect 5 0 87 15)(font "Arial" ))
+	(text "inst" (rect 8 288 31 303)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk" (rect 0 0 17 15)(font "Arial" ))
+		(text "clk" (rect 21 27 38 42)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "vpa" (rect 0 0 22 15)(font "Arial" ))
+		(text "vpa" (rect 21 43 43 58)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "key0" (rect 0 0 29 15)(font "Arial" ))
+		(text "key0" (rect 21 59 50 74)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "control_done_0" (rect 0 0 101 15)(font "Arial" ))
+		(text "control_done_0" (rect 21 75 122 90)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "user_buffer_full_0" (rect 0 0 118 15)(font "Arial" ))
+		(text "user_buffer_full_0" (rect 21 91 139 106)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "control_done_1" (rect 0 0 101 15)(font "Arial" ))
+		(text "control_done_1" (rect 21 107 122 122)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "control_early_done_1" (rect 0 0 140 15)(font "Arial" ))
+		(text "control_early_done_1" (rect 21 123 161 138)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128))
+	)
+	(port
+		(pt 0 144)
+		(input)
+		(text "user_buffer_data_1[31..0]" (rect 0 0 166 15)(font "Arial" ))
+		(text "user_buffer_data_1[31..0]" (rect 21 139 187 154)(font "Arial" ))
+		(line (pt 0 144)(pt 16 144)(line_width 3))
+	)
+	(port
+		(pt 0 160)
+		(input)
+		(text "user_data_available_1" (rect 0 0 148 15)(font "Arial" ))
+		(text "user_data_available_1" (rect 21 155 169 170)(font "Arial" ))
+		(line (pt 0 160)(pt 16 160))
+	)
+	(port
+		(pt 384 64)
+		(output)
+		(text "we" (rect 64 0 82 15)(font "Arial" ))
+		(text "we" (rect 348 59 366 74)(font "Arial" ))
+		(line (pt 384 64)(pt 368 64))
+	)
+	(port
+		(pt 384 80)
+		(output)
+		(text "enable" (rect 64 0 108 15)(font "Arial" ))
+		(text "enable" (rect 326 75 370 90)(font "Arial" ))
+		(line (pt 384 80)(pt 368 80))
+	)
+	(port
+		(pt 384 96)
+		(output)
+		(text "reset" (rect 64 0 97 15)(font "Arial" ))
+		(text "reset" (rect 336 91 369 106)(font "Arial" ))
+		(line (pt 384 96)(pt 368 96))
+	)
+	(port
+		(pt 384 112)
+		(output)
+		(text "control_fixed_0" (rect 64 0 161 15)(font "Arial" ))
+		(text "control_fixed_0" (rect 281 107 378 122)(font "Arial" ))
+		(line (pt 384 112)(pt 368 112))
+	)
+	(port
+		(pt 384 128)
+		(output)
+		(text "control_write_base_0[31..0]" (rect 64 0 243 15)(font "Arial" ))
+		(text "control_write_base_0[31..0]" (rect 212 123 391 138)(font "Arial" ))
+		(line (pt 384 128)(pt 368 128)(line_width 3))
+	)
+	(port
+		(pt 384 144)
+		(output)
+		(text "control_write_length_0[31..0]" (rect 64 0 250 15)(font "Arial" ))
+		(text "control_write_length_0[31..0]" (rect 206 139 392 154)(font "Arial" ))
+		(line (pt 384 144)(pt 368 144)(line_width 3))
+	)
+	(port
+		(pt 384 160)
+		(output)
+		(text "control_go_0" (rect 64 0 148 15)(font "Arial" ))
+		(text "control_go_0" (rect 292 155 376 170)(font "Arial" ))
+		(line (pt 384 160)(pt 368 160))
+	)
+	(port
+		(pt 384 176)
+		(output)
+		(text "user_write_buffer_0" (rect 64 0 193 15)(font "Arial" ))
+		(text "user_write_buffer_0" (rect 254 171 383 186)(font "Arial" ))
+		(line (pt 384 176)(pt 368 176))
+	)
+	(port
+		(pt 384 192)
+		(output)
+		(text "user_buffer_input_0[31..0]" (rect 64 0 233 15)(font "Arial" ))
+		(text "user_buffer_input_0[31..0]" (rect 220 187 389 202)(font "Arial" ))
+		(line (pt 384 192)(pt 368 192)(line_width 3))
+	)
+	(port
+		(pt 384 208)
+		(output)
+		(text "control_fixed_location_1" (rect 64 0 220 15)(font "Arial" ))
+		(text "control_fixed_location_1" (rect 231 203 387 218)(font "Arial" ))
+		(line (pt 384 208)(pt 368 208))
+	)
+	(port
+		(pt 384 224)
+		(output)
+		(text "control_read_base_1[31..0]" (rect 64 0 242 15)(font "Arial" ))
+		(text "control_read_base_1[31..0]" (rect 213 219 391 234)(font "Arial" ))
+		(line (pt 384 224)(pt 368 224)(line_width 3))
+	)
+	(port
+		(pt 384 240)
+		(output)
+		(text "control_read_length_1[31..0]" (rect 64 0 249 15)(font "Arial" ))
+		(text "control_read_length_1[31..0]" (rect 207 235 392 250)(font "Arial" ))
+		(line (pt 384 240)(pt 368 240)(line_width 3))
+	)
+	(port
+		(pt 384 256)
+		(output)
+		(text "control_go_1" (rect 64 0 148 15)(font "Arial" ))
+		(text "control_go_1" (rect 292 251 376 266)(font "Arial" ))
+		(line (pt 384 256)(pt 368 256))
+	)
+	(port
+		(pt 384 272)
+		(output)
+		(text "user_read_buffer_1" (rect 64 0 192 15)(font "Arial" ))
+		(text "user_read_buffer_1" (rect 255 267 383 282)(font "Arial" ))
+		(line (pt 384 272)(pt 368 272))
+	)
+	(port
+		(pt 384 32)
+		(bidir)
+		(text "A[9..0]" (rect 64 0 102 15)(font "Arial" ))
+		(text "A[9..0]" (rect 335 27 373 42)(font "Arial" ))
+		(line (pt 384 32)(pt 368 32)(line_width 3))
+	)
+	(port
+		(pt 384 48)
+		(bidir)
+		(text "D[7..0]" (rect 64 0 105 15)(font "Arial" ))
+		(text "D[7..0]" (rect 336 43 377 58)(font "Arial" ))
+		(line (pt 384 48)(pt 368 48)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 368 288))
+	)
+)
